@@ -1,0 +1,152 @@
+h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: gray;
+	font-weight: bold;
+}
+body {
+	font-family: Verdana, Geneva, "Bitstream Vera Sans", "DejaVu 	Sans", sans-serif;
+	background-color: #FFFFFF;
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: Cambria, "Palatino Linotype", "book Antiqua", 	"URW Palladio L" , serif;
+}
+table
+{
+	border-collapse: collapse;
+	width: 100%;
+	background-color: #F1F1F1;
+}
+
+table th
+{
+	color: #FFFFFF;
+	background-color: #555555;
+	border: 1px solid #555555;
+	padding: 3px;
+	vertical-align: top;
+	text-align: left;
+}
+table td
+{
+	border: 1px solid #D4D4D4;
+	padding: 5px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	vertical-align: top;
+}
+table tr:hover
+{
+	background-color: #CCFF00;
+}
+table td a
+{
+	text-decoration: none;
+}
+table td a:hover
+{
+	text-decoration: underline;
+}
+#container {
+	width: 100%;
+	background-color: #EBEBEB;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	overflow: hidden;
+}
+#header {
+	background-color: #91A43D;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#sidebar {
+	float: left;
+	width: 12em;
+	font-weight: bold;
+	overflow: hidden;
+}
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#sidebar a {
+	display: block;
+	padding: 3px 3px 5px 30px;
+	background-color: #336666;
+	color: #EBEBEB;
+	border-bottom: 1px #EBEBEB solid;
+	text-decoration: none;
+}
+#sidebar a:hover {
+	background-color: #EBEBEB;
+	color: #336666;
+}
+#sideheader1 li {
+	background-color: #000000;
+	color: #FFFFFF;
+	display: block;
+	padding: 3px 3px 5px 30px;
+	border-bottom: 1px #EBEBEB solid;
+	border-top: 1px #EBEBEB solid;
+	text-decoration: none;
+}
+#sideheader2 li {
+	background-color: #000000;
+	color: #FFFFFF;
+	display: block;
+	padding: 3px 3px 5px 30px;
+	border-bottom: 1px #EBEBEB solid;
+	text-decoration: none;
+}
+#mainContent {
+	background-color: #FFFFFF;
+	margin-left: 12em;
+	padding: 10px 20px 0 1em;
+}
+#mainContent p a
+{
+	text-decoration: none;
+}
+#mainContent p a:hover
+{
+	text-decoration: underline;
+}
+#check li
+{
+	text-align: right;
+ 	list-style-type: none;
+	border: solid 1px #CCCCCC;
+	background-color: #f9f9f9;
+	display: block;
+	padding: 4px;
+	margin: 4px 4px 10px 4px;
+	float: right;
+}
+#check li a
+{
+	text-decoration: none;
+
+}
+#check li a:hover
+{
+	text-decoration: underline;
+}
+#footer p {
+	margin: 0;
+	padding: 4px 0;
+	background-color: #DDDDDD;
+	text-align: center;
+	font-size: .8em;
+}
+.clearfloat {
+	clear: both;
+	height: 0;
+	font-size: 0px;
+}
