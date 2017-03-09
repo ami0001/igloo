@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","alex_final");
+$con=mysqli_connect("localhost","root","","dbIgloo");
 $null=0;
 
 // Check connection
