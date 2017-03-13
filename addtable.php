@@ -8,10 +8,10 @@ if (mysqli_connect_errno()) {
 }
 
 // Create tables
-$profiles="CREATE TABLE tbAccount(Username CHAR(20),Password CHAR(20),Email CHAR(20))";
+$accounts="CREATE TABLE tbAccount(Username CHAR(20),Password CHAR(20),Email CHAR(20))";
 
 // Execute query
-if (mysqli_query($con,$profiles)) {
+if (mysqli_query($con,$accounts)) {
   echo "tbAccount table created successfully."."<br>";
 }
 else {
