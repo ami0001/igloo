@@ -16,27 +16,12 @@ $accounts="CREATE TABLE tbAccount(
 			phone CHAR(10),
 			cardNum CHAR(16),
 			securityCode CHAR(3),
-			expireMonth CHAR(2),
-			expireYear CHAR(2),
+			expireDate CHAR(5),
 			cardName VARCHAR(21),
 			PRIMARY KEY (email),
 			UNIQUE (cardNum)
 			)";
-$orders="CREATE TABLE tbOrder(
-			orderNum BIGINT,
-			orderTime TIMESTAMP(6),
-			orderName VARCHAR(32),
-			orderStyle VARCHAR(8),
-			email VARCHAR(64),
-			items VARCHAR(8000),
-			basePrice VARCHAR(8000),
-			taxPrice VARCHAR(8000),
-			overallPrice VARCHAR(8000),
-			PRIMARY KEY (orderNum),
-			UNIQUE(orderTime),
-			FOREIGN KEY (email) REFERENCES tbAccount (email)
-			)";
-$receipts="CREATE TABLE tbReceipt(
+$order="CREATE TABLE tbReceipt(
 			orderNum BIGINT,
 			orderTime TIMESTAMP(6),
 			orderName VARCHAR(32),
@@ -48,12 +33,9 @@ $receipts="CREATE TABLE tbReceipt(
 			overallPrice FLOAT,
 			tip VARCHAR(8000),
 			cardNum CHAR(16),
-			PRIMARY KEY (orderNum, orderTime),
+			PRIMARY KEY (orderNum),
 			FOREIGN KEY (email) REFERENCES tbAccount (email),
 			FOREIGN KEY (cardNum) REFERENCES tbAccount (cardNum),
-			FOREIGN KEY (empId) REFERENCES tbEmployee (empId),
-			FOREIGN KEY (orderNum) REFERENCES tbOrder (orderNum),
-			FOREIGN KEY (orderTime) REFERENCES tbOrder (orderTime)
 			)";
 $items="CREATE TABLE tbItem(
 			itemId CHAR(7),
@@ -62,6 +44,7 @@ $items="CREATE TABLE tbItem(
 			itemDesc VARCHAR(8000),
 			PRIMARY KEY (itemId)
 			)";
+/*
 $employees="CREATE TABLE tbEmployee(
 			efname VARCHAR(32),
 			minit VARCHAR(1),
@@ -78,7 +61,7 @@ $employees="CREATE TABLE tbEmployee(
 			UNIQUE (ssn),
 			FOREIGN KEY (email) REFERENCES tbAccount(email)
 			)";
-			
+*/		
 // Execute query
 if (mysqli_query($con,$accounts)) {
   echo "tbAccount table created successfully."."<br>";

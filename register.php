@@ -132,11 +132,11 @@ if(isset($_POST['submit']))
 						</select>
 						/
 						<select name="year">
-							<option value="y2k17">2017</option>
-							<option value="y2k18">2018</option>
-							<option value="y2k19">2019</option>
-							<option value="y2k20">2020</option>
-							<option value="y2k21">2021</option>
+							<option value="y2k17">17</option>
+							<option value="y2k18">18</option>
+							<option value="y2k19">19</option>
+							<option value="y2k20">20</option>
+							<option value="y2k21">21</option>
 						</select>
 					</td>
 				</tr>
