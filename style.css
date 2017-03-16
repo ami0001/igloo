@@ -106,7 +106,7 @@ table td a:hover
 	text-decoration: none;
 }
 #mainContent {
-	background-color: #FFFFFF;
+	background-color: #EBEBEB;
 	margin-left: 12em;
 	padding: 10px 20px 0 1em;
 }
@@ -138,6 +138,30 @@ table td a:hover
 {
 	text-decoration: underline;
 }
+
+#heightSpace1
+{
+    height: 70px;
+}
+
+#heightSpace2
+{
+    height: 20px;
+}
+
+#mainContent2 
+{
+	background-color: #EBEBEB;
+	margin-left: 9em;
+	padding: 10px 20px 0 1em;
+}
+
+
+#footer-spacer 
+{
+    height: 70px;
+}
+
 #footer p {
 	margin: 0;
 	padding: 4px 0;
@@ -189,9 +213,9 @@ table td a:hover
 @keyframes slide {
   0% {background-position:0 0;}
   16.66% {background-position:0 0;}
-  33.32% {background-position:-700px 0;}
-  49.98% {background-position:-700px 0;}
-  66.64% {background-position:-1500px 0;}
-  83.30% {background-position:-1500px 0;}
+  33.32% {background-position:-800px 0;}
+  49.98% {background-position:-800px 0;}
+  66.64% {background-position:-1600px 0;}
+  83.30% {background-position:-1600px 0;}
   100% {background-position:0 0;}
 }
