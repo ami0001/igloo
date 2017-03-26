@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "config.php"; //Connection Script, include in every file!
+require "config.php";
 
 if(isset($_POST['submit']))
 {
@@ -15,14 +15,11 @@ if(isset($_POST['submit']))
    $email  = mysqli_real_escape_string($con, $email);
    $pass  = mysqli_real_escape_string($con, $pass);
    
-   //Check to see if the user left any space empty!
    if($email == "" || $pass == "")
    {
       echo "Email or password is missing.";
    }
-   
-   //Check to see if the username AND password MATCHES the username AND password in the DB
-   else
+      else
    {
       $query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email' and pass = '$pass'") or die("Can not query DB.");
       $count = mysqli_num_rows($query);

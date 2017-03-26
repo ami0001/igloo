@@ -8,4 +8,4 @@
 		<h1>Menu Page</h1>
 	</div> <!-- End of header -->
 </body>
-</html> 
+</html>

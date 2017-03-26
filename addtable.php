@@ -13,6 +13,7 @@ $accounts="CREATE TABLE tbAccount(
 			pass VARCHAR(32),
 			fname VARCHAR(32),
 			lname VARCHAR(32),
+			address VARCHAR(64),
 			phone CHAR(10),
 			cardNum CHAR(16),
 			securityCode CHAR(3),
@@ -21,28 +22,28 @@ $accounts="CREATE TABLE tbAccount(
 			PRIMARY KEY (email),
 			UNIQUE (cardNum)
 			)";
-$order="CREATE TABLE tbReceipt(
+$order="CREATE TABLE tbOrder(
 			orderNum BIGINT,
 			orderTime TIMESTAMP(6),
-			orderName VARCHAR(32),
-			empId char(9),
+			fname VARCHAR(32),
+			lname VARCHAR(32),
+			orderStyle CHAR,
 			email VARCHAR(64),
-			items VARCHAR(8000),
-			basePrice FLOAT,
-			taxPrice FLOAT,
-			overallPrice FLOAT,
-			tip VARCHAR(8000),
+			phone CHAR(10),
+			item VARCHAR(8),
+			itemSize VARCHAR(4),
+			flavors VARCHAR(8000),
+			toppings VARCHAR(8000),
+			orderPrice FLOAT,
+			payStyle CHAR,
 			cardNum CHAR(16),
 			PRIMARY KEY (orderNum),
-			FOREIGN KEY (email) REFERENCES tbAccount (email),
-			FOREIGN KEY (cardNum) REFERENCES tbAccount (cardNum),
 			)";
-$items="CREATE TABLE tbItem(
-			itemId CHAR(7),
-			itemName VARCHAR(256),
+$menu="CREATE TABLE tbMenu(
+			itemName VARCHAR(64),
 			itemPrice FLOAT,
 			itemDesc VARCHAR(8000),
-			PRIMARY KEY (itemId)
+			PRIMARY KEY (itemName)
 			)";
 /*
 $employees="CREATE TABLE tbEmployee(
