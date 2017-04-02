@@ -15,6 +15,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: Cambria, "Palatino Linotype", "book Antiqua", 	"URW Palladio L" , serif;
 }
+
+/*
 table
 {
 	border-collapse: collapse;
@@ -51,6 +53,7 @@ table td a:hover
 {
 	text-decoration: underline;
 }
+*/
 #container {
 	width: 100%;
 	background-color: #EBEBEB;
