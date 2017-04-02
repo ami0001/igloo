@@ -167,6 +167,16 @@ table td a:hover
     height: 70px;
 }
 
+#register-spacer 
+{
+    height: 200px;
+}
+
+#login-spacer 
+{
+    height: 200px;
+}
+
 #footer p {
 	margin: 0;
 	padding: 4px 0;

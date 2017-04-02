@@ -25,11 +25,6 @@
 					<span style="display:inline-block; width: YOURWIDTH;"></span>
 					<span style="display:inline-block; width: YOURWIDTH;"></span>
 					<li> <a href=order.php><img src="images/button/orderOnlineButton.png" alt="Order Page" title="Ordert Page"></a></li>
-					<!-- <li><input type="image" src="images/button/orderOnlineButton.png" /> </li> -->
-					<!-- <li> <a href =menu.php>Menu</a></li> -->
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
 					<!-- <li> <a href =order.php>Order Online</a></li> -->
 					<span style="display:inline-block; width: YOURWIDTH;"></span>
 					<span style="display:inline-block; width: YOURWIDTH;"></span>

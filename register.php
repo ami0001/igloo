@@ -72,8 +72,38 @@ if(isset($_POST['submit']))
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
-</head>
-<body>
+<body style="background-image:url('images/registerBackground.jpg'); background-size: 100% auto; background-repeat: no-repeat;">
+	<!-- this is being used to display the login and register on the same horizontal line -->
+		<div id="div_top_hypers">
+			<ul id="ul_top_hypers">
+				<center>
+					<li> <a href=index.php><img src="images/button/homeButton.png" alt="About Page" title="About Page"></a></li>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<!-- <li><input type="image" src="images/button/aboutButton.png" /> </li> -->
+					<li> <a href=about.php><img src="images/button/aboutButton.png" alt="About Page" title="About Page"></a></li>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<li> <a href=order.php><img src="images/button/orderOnlineButton.png" alt="Order Page" title="Ordert Page"></a></li>
+					<!-- <li> <a href =order.php>Order Online</a></li> -->
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<li> <a href=register.php><img src="images/button/registerButton.png" alt="Register Page" title="Register Page"></a></li>
+					<!-- <li><input type="image" src="images/button/registerButton.png" /> </li> -->
+					<!-- <li> <a href=register.php>Register for an Account</a> </li> -->
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<span style="display:inline-block; width: YOURWIDTH;"></span>
+					<li> <a href=login.php><img src="images/button/loginButton.png" alt="Register Page" title="Register Page"></a></li>
+					<!-- <li><input type="image" src="images/button/loginButton.png" /> </li> -->
+					<!-- <li> <a href=login.php>Login</a> </li> --> 
+				</center>
+			</ul>
+		</div>	<!-- end of div_top_hypers -->
+	<div id="register-spacer"></div> 
 	<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 	<tr>
 	<form name="register" method="post" action="register.php">
