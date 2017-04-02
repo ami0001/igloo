@@ -106,10 +106,11 @@ table td a:hover
 	border-bottom: 1px #EBEBEB solid;
 	text-decoration: none;
 }
-#mainContent {
+#mainContent 
+{
 	background-color: #EBEBEB;
-	margin-left: 12em;
-	padding: 10px 20px 0 1em;
+	/*margin-left: 12em;*/
+	/*padding: 10px 20px 0 1em;*/
 }
 #mainContent p a
 {
@@ -142,7 +143,7 @@ table td a:hover
 
 #heightSpace1
 {
-    height: 70px;
+    height: 50px;
 }
 
 #heightSpace2
@@ -190,14 +191,40 @@ table td a:hover
     display: inline;
 }
 
+button 
+{
+    display: inline-block;
+    height: 134px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 104px;
+}
+
+#close-image img 
+{
+    display: block;
+    height: 130px;  
+    width: 100px;
+}
+
+#close-CSS 
+{
+    background-image: url( "images/button/button.png" );
+    background-size: 100px 130px;
+    height: 134px;  
+    width: 104px;
+}
+
+
 /* THE DIV */
 .simple-ss {
-  width:800px;
-  height:500px;
+  width:900px;
+  height:550px;
   background-color:red;
   margin:auto;
   /*background-image:url("http://imgur.com/download/OtK7XDW");*/
-  background-image:url("images/iglooBackground.jpg");
+  background-image:url("images/iglooBackground3.jpg");
   background-position:0;
   background-repeat:no-repeat;
   background-size:cover;
@@ -214,9 +241,9 @@ table td a:hover
 @keyframes slide {
   0% {background-position:0 0;}
   16.66% {background-position:0 0;}
-  33.32% {background-position:-800px 0;}
-  49.98% {background-position:-800px 0;}
-  66.64% {background-position:-1600px 0;}
-  83.30% {background-position:-1600px 0;}
+  33.32% {background-position:-990px 0;}
+  49.98% {background-position:-990px 0;}
+  66.64% {background-position:-1980px 0;}
+  83.30% {background-position:-1980px 0;}
   100% {background-position:0 0;}
 }
