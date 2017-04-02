@@ -68,10 +68,13 @@ if(isset($_POST['submit']))
 
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>The Igloo</title>
+	<link href="style.css" rel=stylesheet type="text/css" />
+</head>
 </head>
 <body>
-	<center><table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+	<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 	<tr>
 	<form name="register" method="post" action="register.php">
 		<td>
@@ -119,6 +122,6 @@ if(isset($_POST['submit']))
 		</td>
 	</form>
 	</tr>
-	</table></center>
+	</table>
 </body>
 </html> 

@@ -65,47 +65,49 @@ if(isset($_POST['submit']))
 
 <html>
 <head>
+	<t<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>The Igloo</title>
+	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body>
-	<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+	<form name="order" method="post" action="order.php">
+	<table align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 	<tr>
-	<form name="register" method="post" action="register.php">
 		<td>
-			<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+			<table border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF" style="padding: 10;">
 				<tr>
 					<td colspan="3"><strong><center>Customer Information</center></strong></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">First Name:</td>
-					<td><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 10;">First Name:</td>
+					<td style="padding-right: 10;"><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Last Name:</td>
-					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 10;">Last Name:</td>
+					<td ><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Address:</td>
+					<td style="padding-left: 10;">Address:</td>
 					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Email:</td>
+					<td style="padding-left: 10;">Email:</td>
 					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Phone:</td>
+					<td style="padding-left: 10;">Phone:</td>
 					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Card Number:</td>
+					<td style="padding-left: 10;">Card Number:</td>
 					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Security Code:</td>
+					<td style="padding-left: 10;">Security Code:</td>
 					<td><input name="svn" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Expiration Date:</td>
+					<td style="padding-left: 10;">Expiration Date:</td>
 					<td>
 						<select name="month">
 							<option value="jan">01</option>
@@ -132,42 +134,38 @@ if(isset($_POST['submit']))
 					</td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Name on Card:</td>
+					<td style="padding-left: 10;">Name on Card:</td>
 					<td><input name="cardName" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" name="submit" value="Create Profile" style="font-size: 11pt"></td>
 				</tr>
 			</table>
 		</td>
 		<td>
-			<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+			<table border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF" style="padding: 10;">
 				<tr>
 					<td colspan="3"><strong><center>Order Summary</center></strong></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Item:</td>
-					<td><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 10;">Item:</td>
+					<td style="padding-right: 10;"><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Size:</td>
+					<td style="padding-left: 10;">Size:</td>
 					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Flavor(s):</td>
+					<td style="padding-left: 10;">Flavor(s):</td>
 					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Topping(s):</td>
+					<td style="padding-left: 10;">Topping(s):</td>
 					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Price:</td>
+					<td style="padding-left: 10;">Price:</td>
 					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Order Style:</td>
+					<td style="padding-left: 10;">Order Style:</td>
 					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
@@ -176,8 +174,8 @@ if(isset($_POST['submit']))
 				</tr>
 			</table>
 		</td>
-	</form>
 	</tr>
 	</table>
+	</form>
 </body>
 </html> 
