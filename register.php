@@ -12,6 +12,7 @@ if(isset($_POST['submit']))
    $pass  = $_POST['pass'];
    $cpass = $_POST['cpass'];
    $email = $_POST['email'];
+   $address = $_POST['address'];
    $cemail = $_POST['cemail'];
    $phone = $_POST['phone'];
    $fname = $_POST['fname'];
@@ -21,6 +22,7 @@ if(isset($_POST['submit']))
    $cpass = stripslashes($cpass);
    $email = stripslashes($email);
    $cemail = stripslashes($cemail);
+   $address = stripslashes($address);
    $phone = stripslashes($phone);
    $fname = stripslashes($fname);
    $lname = stripslashes($lname);
@@ -29,11 +31,12 @@ if(isset($_POST['submit']))
    $cpass = mysqli_real_escape_string($con, $cpass);
    $email = mysqli_real_escape_string($con, $email);
    $cemail = mysqli_real_escape_string($con, $cemail);
+   $address = mysqli_real_escape_string($con, $address);
    $phone = mysqli_real_escape_string($con, $phone);
    $fname = mysqli_real_escape_string($con, $fname);
    $lname = mysqli_real_escape_string($con, $lname);
    
-   if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "")
+   if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "" || $address == "")
    {
       echo "One or more fields marked by * were left blank.";
    }
@@ -68,7 +71,7 @@ if(isset($_POST['submit']))
 	<title>The Igloo</title>
 </head>
 <body>
-	<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+	<center><table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 	<tr>
 	<form name="register" method="post" action="register.php">
 		<td>
@@ -77,74 +80,37 @@ if(isset($_POST['submit']))
 					<td colspan="3"><strong><center>Registration</center></strong></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">*First Name:</td>
-					<td><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">*Last Name:</td>
-					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">*Email:</td>
+					<td style="padding-left: 50;">Email:</td>
 					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">*Confirm Email:</td>
+					<td style="padding-left: 50;">Confirm Email:</td>
 					<td><input name="cemail" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">*Phone:</td>
-					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">*Password:</td>
+					<td style="padding-left: 50;">Password:</td>
 					<td><input name="pass" type="password" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">*Confirm Password:</td>
+					<td style="padding-left: 50;">Confirm Password:</td>
 					<td><input name="cpass" type="password" style="width: 325; font-size: 11pt"></td>
 				</tr>
-				<!--
 				<tr>
-					<td style="padding-left: 50;">Card Number:</td>
-					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 50;">First Name:</td>
+					<td><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Security Code:</td>
-					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 50;">Last Name:</td>
+					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Expiration Date:</td>
-					<td>
-						<select name="month">
-							<option value="jan">01</option>
-							<option value="feb">02</option>
-							<option value="mar">03</option>
-							<option value="apr">04</option>
-							<option value="may">05</option>
-							<option value="jun">06</option>
-							<option value="jul">07</option>
-							<option value="aug">08</option>
-							<option value="sep">09</option>
-							<option value="oct">10</option>
-							<option value="nov">11</option>
-							<option value="dec">12</option>
-						</select>
-						/
-						<select name="year">
-							<option value="y2k17">17</option>
-							<option value="y2k18">18</option>
-							<option value="y2k19">19</option>
-							<option value="y2k20">20</option>
-							<option value="y2k21">21</option>
-						</select>
-					</td>
+					<td style="padding-left: 50;">Address:</td>
+					<td><input name="address" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
-					<td style="padding-left: 50;">Name on Card:</td>
-					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-left: 50;">Phone:</td>
+					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
-				-->
 				<tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Create Profile" style="font-size: 11pt"></td>
@@ -153,6 +119,6 @@ if(isset($_POST['submit']))
 		</td>
 	</form>
 	</tr>
-	</table>
+	</table></center>
 </body>
 </html> 

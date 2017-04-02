@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 
 // Create tables
-$accounts="CREATE TABLE tbAccount(
+$account="CREATE TABLE tbAccount(
 			email VARCHAR(64),
 			pass VARCHAR(32),
 			fname VARCHAR(32),
@@ -45,55 +45,24 @@ $menu="CREATE TABLE tbMenu(
 			itemDesc VARCHAR(8000),
 			PRIMARY KEY (itemName)
 			)";
-/*
-$employees="CREATE TABLE tbEmployee(
-			efname VARCHAR(32),
-			minit VARCHAR(1),
-			elname VARCHAR(32),
-			empId CHAR(9),
-			ssn CHAR(9),
-			bdate CHAR(10),
-			address VARCHAR(128),
-			sex CHAR(1),
-			salary FLOAT,
-			empLvl VARCHAR(8),
-			email VARCHAR(32),
-			PRIMARY KEY (empId),
-			UNIQUE (ssn),
-			FOREIGN KEY (email) REFERENCES tbAccount(email)
-			)";
-*/		
+
 // Execute query
-if (mysqli_query($con,$accounts)) {
+if (mysqli_query($con,$account)) {
   echo "tbAccount table created successfully."."<br>";
 }
 else {
   echo "Error creating table: " . mysqli_error($con) . ".<br>";
 } 
 
-if (mysqli_query($con,$orders)) {
+if (mysqli_query($con,$order)) {
   echo "tbOrder table created successfully."."<br>";
 }
 else {
   echo "Error creating table: " . mysqli_error($con) . ".<br>";
 } 
- 
-if (mysqli_query($con,$receipts)) {
-  echo "tbReceipt table created successfully."."<br>";
-}
-else {
-  echo "Error creating table: " . mysqli_error($con) . ".<br>";
-}  
 
-if (mysqli_query($con,$items)) {
+if (mysqli_query($con,$menu)) {
   echo "tbItem table created successfully."."<br>";
-}
-else {
-  echo "Error creating table: " . mysqli_error($con) . ".<br>";
-}
-
-if (mysqli_query($con,$employees)) {
-  echo "tbEmployee table created successfully."."<br>";
 }
 else {
   echo "Error creating table: " . mysqli_error($con) . ".<br>";
