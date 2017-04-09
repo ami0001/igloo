@@ -3,64 +3,51 @@ session_start();
 
 require "config.php";
 
-if(isset($_SESSION['email'])){
-   header("location: index.php");
-}
-
-if(isset($_POST['submit']))
+if(isset($_POST['confirm']))
 {
-   $pass  = $_POST['pass'];
-   $cpass = $_POST['cpass'];
-   $email = $_POST['email'];
-   $cemail = $_POST['cemail'];
+   $fname  = $_POST['fname'];
+   $lname = $_POST['cpass'];
+   $address = $_POST['email'];
+   $email = $_POST['cemail'];
    $phone = $_POST['phone'];
-   $fname = $_POST['fname'];
-   $lname = $_POST['lname'];
-      
-   $pass  = stripslashes($pass);
-   $cpass = stripslashes($cpass);
-   $email = stripslashes($email);
-   $cemail = stripslashes($cemail);
-   $phone = stripslashes($phone);
-   $fname = stripslashes($fname);
+   $cardNum = $_POST['fname'];
+   $cvc = $_POST['lname'];
+   $expire = $_POST['month'].'/'.$_POST['year'];
+   $cardName = $_POST['cardName'];
+	
+   $fname  = stripslashes($fname);
    $lname = stripslashes($lname);
+   $address = stripslashes($address);
+   $email = stripslashes($email);
+   $phone = stripslashes($phone);
+   $cardNum = stripslashes($cardNum);
+   $cvc = stripslashes($cvc);
+   $expire = stripslashes($expire);
+   $cardName = stripslashes($cardName);
    
-   $pass  = mysqli_real_escape_string($con, $pass);
-   $cpass = mysqli_real_escape_string($con, $cpass);
-   $email = mysqli_real_escape_string($con, $email);
-   $cemail = mysqli_real_escape_string($con, $cemail);
-   $phone = mysqli_real_escape_string($con, $phone);
-   $fname = mysqli_real_escape_string($con, $fname);
+   $fname  = mysqli_real_escape_string($con, $fname);
    $lname = mysqli_real_escape_string($con, $lname);
+   $address = mysqli_real_escape_string($con, $address);
+   $email = mysqli_real_escape_string($con, $email);
+   $phone = mysqli_real_escape_string($con, $phone);
+   $cardNum = mysqli_real_escape_string($con, $cardNum);
+   $cvc = mysqli_real_escape_string($con, $cvc);
+   $expire = mysqli_real_escape_string($con, $expire);
+   $cardName = mysqli_real_escape_string($con, $cardName);
    
-   if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "")
+   if($fname == "" || $lname == "" || $address == "" || $email == "" || $phone == "" || $cardNum == "" || $cvc == "" || $expire == "" || $cardName == "")
    {
-      echo "One or more fields marked by * were left blank.";
+		echo "One or more fields were left blank.";
    }
-   
    else
    {
-      if($pass != $cpass || $email != $cemail)
-      {
-		  echo "Passwords or emails do not match.";
-      }
-      else
-      {
-         $query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email'") or die("Cannot query the table!");
-         
-         $row = mysqli_num_rows($query);
-         if($row == 1)
-         {
-            echo "Email is already taken.";
-         }
-         else
-         {
-            $add = mysqli_query($con,"INSERT INTO tbAccount (email, pass, fname, lname, phone) VALUES ('$email', '$pass', '$fname', '$lname', '$phone')") or die("Can't insert.");
-			header("location: login.php");
-         }  echo "Registration successful.";      
-      }      
+		$query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email'") or die("Cannot query the table!");
+		 
+		$add = mysqli_query($con,"UPDATE tbOrder set fname, lname, address, email, phone, cardNum, securityCode, expireDate, cardName) VALUES ('$fname', '$lname','$address','$email','$phone','$cardNum','$cvc','$expire','$cardName')") or die("Can't insert.");      
    }
 }
+
+//if(isset($_POST['cancel'])){}
 ?>
 
 <html>
@@ -70,6 +57,12 @@ if(isset($_POST['submit']))
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body>
+	<div id="check">
+	<?php
+		if(isset($_SESSION['email']))
+			echo "<li>".$_SESSION['email']." | "."<a href='logout.php'>Logout</a>"."</li><br>";
+	?>
+	</div>
 	<form name="order" method="post" action="order.php">
 	<table align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 	<tr>
@@ -104,32 +97,32 @@ if(isset($_POST['submit']))
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Security Code:</td>
-					<td><input name="svn" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="cvc" type="text" style="width: 325; font-size: 11pt"></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Expiration Date:</td>
 					<td>
 						<select name="month">
-							<option value="jan">01</option>
-							<option value="feb">02</option>
-							<option value="mar">03</option>
-							<option value="apr">04</option>
-							<option value="may">05</option>
-							<option value="jun">06</option>
-							<option value="jul">07</option>
-							<option value="aug">08</option>
-							<option value="sep">09</option>
-							<option value="oct">10</option>
-							<option value="nov">11</option>
-							<option value="dec">12</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
 						</select>
 						/
 						<select name="year">
-							<option value="y2k17">17</option>
-							<option value="y2k18">18</option>
-							<option value="y2k19">19</option>
-							<option value="y2k20">20</option>
-							<option value="y2k21">21</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
 						</select>
 					</td>
 				</tr>
@@ -146,31 +139,35 @@ if(isset($_POST['submit']))
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Item:</td>
-					<td style="padding-right: 10;"><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
+					<td style="padding-right: 10;"><input name="fname" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Size:</td>
-					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="lname" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Flavor(s):</td>
-					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="email" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Topping(s):</td>
-					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="email" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Price:</td>
-					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="phone" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
 					<td style="padding-left: 10;">Order Style:</td>
-					<td><input name="user" type="text" style="width: 325; font-size: 11pt"></td>
+					<td><input name="user" type="text" style="width: 325; font-size: 11pt" readonly></td>
 				</tr>
 				<tr>
-					<td></td>
+					<td style="padding-left: 10;">Order Number:</td>
+					<td><input name="user" type="text" style="width: 325; font-size: 11pt" readonly></td>
+				</tr>
+				<tr>
 					<td><input type="submit" name="confirm" value="Confirm Order" style="font-size: 11pt"></td>
+					<td><input type="submit" name="confirm" value="Cancel Order" style="font-size: 11pt"></td>
 				</tr>
 			</table>
 		</td>

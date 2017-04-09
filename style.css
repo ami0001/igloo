@@ -16,24 +16,27 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Cambria, "Palatino Linotype", "book Antiqua", 	"URW Palladio L" , serif;
 }
 
-/*
-table
+#specialties table
 {
 	border-collapse: collapse;
-	width: 100%;
 	background-color: #F1F1F1;
+	text-align: left;m
+	padding: 10px;
 }
 
-table th
+#specialties table th
 {
 	color: #FFFFFF;
 	background-color: #555555;
-	border: 1px solid #555555;
-	padding: 3px;
+	padding: 5px;
+	border-bottom: 1px solid #D4D4D4;
+	border-left: 1px solid #D4D4D4;
+	border-right: 1px solid #D4D4D4;
 	vertical-align: top;
 	text-align: left;
 }
-table td
+
+#specialties table td
 {
 	border: 1px solid #D4D4D4;
 	padding: 5px;
@@ -41,19 +44,11 @@ table td
 	padding-bottom: 7px;
 	vertical-align: top;
 }
-table tr:hover
+#specialties table tr:hover
 {
 	background-color: #CCFF00;
 }
-table td a
-{
-	text-decoration: none;
-}
-table td a:hover
-{
-	text-decoration: underline;
-}
-*/
+
 #container {
 	width: 100%;
 	background-color: #EBEBEB;
@@ -160,7 +155,6 @@ table td a:hover
 	margin-left: 9em;
 	padding: 10px 20px 0 1em;
 }
-
 
 #footer-spacer 
 {
