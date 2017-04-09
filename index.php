@@ -63,13 +63,13 @@
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
-						<li> <a href=order.php><img src="images/button/customOrderButton.png" alt="Custom Page" title="Custom Page"></a></li>
+						<li> <a href=custom.php><img src="images/button/customOrderButton.png" alt="Custom Page" title="Custom Page"></a></li>
 						<!-- <li><input type="image" src="images/button/customOrderButton.png" /> </li> -->
 						<!-- <li> <a href =about.php>About</a></li> -->
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
-						<li> <a href=order.php><img src="images/button/specialityOrderButton.png" alt="Special Page" title="Special Page"></a></li>
+						<li> <a href=special.php><img src="images/button/specialityOrderButton.png" alt="Special Page" title="Special Page"></a></li>
 						<!-- <li><input type="image" src="images/button/specialityOrderButton.png" /> </li> -->
 						<!-- <li> <a href =menu.php>Menu</a></li> -->
 						<span style="display:inline-block; width: YOURWIDTH;"></span>
