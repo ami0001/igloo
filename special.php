@@ -10,11 +10,9 @@
  	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body>
-	<table>
-	<tr>
-	<td>
 	<div id="specialties">
-	<table style="display: inline-block; float: center;">
+	<p>
+	<table align="center">
 		<tr>
 			<th>Item</th>
 			<th>Name</th>
@@ -48,11 +46,9 @@
 			}
 		?>
 	</table>
-	</div>
-	</td>
-	<td>
-	<div id="specialties">
-	<table style="display: inline-block; float: center;">
+	</p>
+	<p>
+	<table align="center">
 		<tr>
 			<th>Sizes</th>
 			<th> </th>
@@ -66,9 +62,7 @@
 			<td><input type="radio" name="size" value="XL"> Glacier</td>
 		</tr>
 	</table>
+	</p>
 	</div>
-	</td>
-	</tr>
-	</table>
 </body>
 </html>

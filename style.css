@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 	border-collapse: collapse;
 	background-color: #F1F1F1;
 	text-align: left;m
-	padding: 10px;
 }
 
 #specialties table th
@@ -47,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 #specialties table tr:hover
 {
 	background-color: #CCFF00;
+	border-bottom: 1px solid #D4D4D4;
 }
 
 #container {
@@ -159,16 +159,6 @@ h1, h2, h3, h4, h5, h6 {
 #footer-spacer 
 {
     height: 70px;
-}
-
-#register-spacer 
-{
-    height: 200px;
-}
-
-#login-spacer 
-{
-    height: 200px;
 }
 
 #footer p {
