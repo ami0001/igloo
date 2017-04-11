@@ -24,7 +24,7 @@ $account="CREATE TABLE tbAccount(
 			)";
 			
 $order="CREATE TABLE tbOrder(
-			orderNum BIGINT,
+			orderNum BIGINT AUTO_INCREMENT,
 			orderTime TIMESTAMP(6),
 			fname VARCHAR(32),
 			lname VARCHAR(32),
@@ -33,8 +33,8 @@ $order="CREATE TABLE tbOrder(
 			email VARCHAR(64),
 			address VARCHAR(64),
 			phone CHAR(10),
-			itemName VARCHAR(8),
-			itemSize VARCHAR(4),
+			itemName VARCHAR(32),
+			itemSize VARCHAR(16),
 			flavors VARCHAR(8000),
 			toppings VARCHAR(8000),
 			orderPrice FLOAT,
@@ -85,27 +85,27 @@ if (mysqli_query($con,$item1)) {
   echo "Item 1 was successfully inserted into tbMenu."."<br>";
 }
 else {
-  echo "Error inserting table: " . mysqli_error($con) . ".<br>";
+  echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 }
 
 if (mysqli_query($con,$item2)) {
   echo "Item 2 was successfully inserted into tbMenu."."<br>";
 }
 else {
-  echo "Error inserting table: " . mysqli_error($con) . ".<br>";
+  echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 } 
 
 if (mysqli_query($con,$item3)) {
   echo "Item 3 was successfully inserted into tbMenu."."<br>";
 }
 else {
-  echo "Error inserting table: " . mysqli_error($con) . ".<br>";
+  echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 } 
 
 if (mysqli_query($con,$item4)) {
   echo "Item 4 was successfully inserted into tbMenu."."<br>";
 }
 else {
-  echo "Error inserting table: " . mysqli_error($con) . ".<br>";
+  echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 }  
 ?>

@@ -3,6 +3,24 @@
 <?php
 	session_start();
 	require "config.php";
+	
+	if (isset($_POST['place'])) {
+		$item = $_POST['item'];
+		$size = $_POST['size'];
+		$style = $_POST['style'];
+		
+		if ($item == "" || $size == "" || $style == "") {
+			echo "Must fill out all fields.";
+		}
+		
+		$item = "INSERT INTO tbOrder (itemName, itemSize, orderStyle, orderType) VALUES ('$item', '$size', '$style','S')";
+		if (mysqli_query($con,$item)) {
+			header("location: order.php");
+		}
+		else {
+			echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
+		}  
+	}
 ?>
 <head>
  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,6 +28,7 @@
  	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body>
+	<form name="special" method="post" action="special.php">
 	<div id="specialties">
 	<p>
 	<table align="center">
@@ -40,7 +59,7 @@
 					}
 				}
 				
-				echo "<td><center><input type=\"radio\" name=\"item\" value=\"" . $val . "\"></center></td>";
+				echo "<td><center><input type=\"radio\" name=\"item\" value=\"" . $itemName . "\"></center></td>";
 			
 				$itemCnt++;
 			}
@@ -50,19 +69,34 @@
 	<p>
 	<table align="center">
 		<tr>
-			<th>Sizes</th>
+			<th style="border-right: 1px solid #555555;">Sizes</th>
 			<th> </th>
 		</tr>
 		<tr>
-			<td><input type="radio" name="size" value="S"> Snowflake</td>
-			<td><input type="radio" name="size" value="M"> Icicle</td>
+			<td><input type="radio" name="size" value="Snowflake"> Snowflake</td>
+			<td><input type="radio" name="size" value="Icicle"> Icicle</td>
 		</tr>
 		<tr>
-			<td><input type="radio" name="size" value="L"> Iceberg</td>
-			<td><input type="radio" name="size" value="XL"> Glacier</td>
+			<td><input type="radio" name="size" value="Iceberg"> Iceberg</td>
+			<td><input type="radio" name="size" value="Glacier"> Glacier</td>
+		</tr>
+	</table>
+	</p>
+	<p>
+	<table align="center">
+		<tr>
+			<th style="border-right: 1px solid #555555;">Style</th>
+			<th> </th>
+		</tr>
+		<tr>
+			<td><input type="radio" name="style" value="D"> Delivery</td>
+			<td><input type="radio" name="style" value="C"> Carryout</td>
 		</tr>
 	</table>
 	</p>
 	</div>
+	<p>
+		<center><input type="submit" name="place" value="Place Order"></center>
+	</p>
 </body>
 </html>

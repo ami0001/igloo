@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
    {
       echo "Email or password is missing.";
    }
-      else
+   else
    {
       $query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email' and pass = '$pass'") or die("Can not query DB.");
       $count = mysqli_num_rows($query);

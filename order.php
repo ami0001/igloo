@@ -5,7 +5,7 @@ require "config.php";
 
 if(isset($_POST['confirm']))
 {
-   $fname  = $_POST['fname'];
+   $fname = $_POST['fname'];
    $lname = $_POST['cpass'];
    $address = $_POST['email'];
    $email = $_POST['cemail'];
@@ -22,7 +22,6 @@ if(isset($_POST['confirm']))
    $phone = stripslashes($phone);
    $cardNum = stripslashes($cardNum);
    $cvc = stripslashes($cvc);
-   $expire = stripslashes($expire);
    $cardName = stripslashes($cardName);
    
    $fname  = mysqli_real_escape_string($con, $fname);
@@ -32,7 +31,6 @@ if(isset($_POST['confirm']))
    $phone = mysqli_real_escape_string($con, $phone);
    $cardNum = mysqli_real_escape_string($con, $cardNum);
    $cvc = mysqli_real_escape_string($con, $cvc);
-   $expire = mysqli_real_escape_string($con, $expire);
    $cardName = mysqli_real_escape_string($con, $cardName);
    
    if($fname == "" || $lname == "" || $address == "" || $email == "" || $phone == "" || $cardNum == "" || $cvc == "" || $expire == "" || $cardName == "")
@@ -52,7 +50,7 @@ if(isset($_POST['confirm']))
 
 <html>
 <head>
-	<t<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
