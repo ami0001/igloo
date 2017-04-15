@@ -11,8 +11,8 @@
 	<?php
 		require "check.php";
 		
-		(isset($_POST['nmonth'])) ? $nmonth = $_POST['nmonth'] : $nmonth = 0;
-		(isset($_POST['nyear'])) ? $nyear = $_POST['nyear'] : $nyear = 17
+		(isset($_POST['nmonth'])) ? $nmonth = $_POST['nmonth'] : $nmonth = 1;
+		(isset($_POST['nyear'])) ? $nyear = $_POST['nyear'] : $nyear = 17;
 	?>
 	<p><form name="register" method="post" action="edit.php">
 		<table width="700" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
@@ -42,13 +42,14 @@
 							if (isset($_SESSION['email'])) {
 								$oemail = $_SESSION['email'];
 								$email = $_SESSION['email'];
-								$pass = $_SESSION['pass'];
+								$opass = $_SESSION['pass'];
 								
 								$query = mysqli_query($con, "SELECT * FROM tbAccount WHERE email='$email'");
 								
 								while ($row = mysqli_fetch_assoc($query)) {						
 									foreach($row as $col => $val) {
 										if ($col == 'email') {
+											$email = $val;
 											echo "<tr>
 													<td style=\"padding-left: 50;\">Current Email:</td>
 													<td style=\"padding-right: 10;\"><input name=\"email\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\"".$email."\" readonly></td>
@@ -63,16 +64,17 @@
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'pass') {
+											$pass = $val;
 											echo "<tr>
 													<td style=\"padding-left: 50;\">Current Password:</td>
-													<td style=\"padding-right: 10;\"><input name=\"pass\" type=\"password\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"pass\" type=\"password\" style=\"width: 325; font-size: 11pt\" value=\"".$pass."\"></td>
 												</tr>
 												<tr>
-													<td style=\"padding-left: 50;\">New Password</td>
+													<td style=\"padding-left: 50;\">New Password:</td>
 													<td style=\"padding-right: 10;\"><input name=\"npass\" type=\"password\" style=\"width: 325; font-size: 11pt\"></td>
 												</tr>
 												<tr>
-													<td style=\"padding-left: 50;\">Confirm New Password</td>
+													<td style=\"padding-left: 50;\">Confirm New Email:</td>
 													<td style=\"padding-right: 10;\"><input name=\"cpass\" type=\"password\" style=\"width: 325; font-size: 11pt\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
@@ -254,7 +256,6 @@
 			$ncvc = stripslashes($ncvc);
 			$ncardName = stripslashes($ncardName);
 			
-			$pass  = mysqli_real_escape_string($con, $pass);
 			$cpass = mysqli_real_escape_string($con, $cpass);
 			$npass = mysqli_real_escape_string($con, $npass);
 			$nemail = mysqli_real_escape_string($con, $nemail);
@@ -281,6 +282,7 @@
 					$email = $nemail;
 				if ($npass != "")
 					$pass = $npass;
+				echo "Password: ". $pass;
 				if ($nfname != "")
 					$fname = $nfname;
 				if ($nlname != "")
@@ -303,7 +305,8 @@
 				if (mysqli_query($con,$update)) {
 					$_SESSION['email'] = $email;
 					$_SESSION['pass'] = $pass;
-					header("location: profile.php");
+					
+					header("location: edit.php");
 				}
 				else {
 					echo mysqli_error($con);
