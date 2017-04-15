@@ -5,10 +5,43 @@
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body>
+	<?php
+			require "check.php";
+	?>
 	<div id="specialties">
 	<p>
-	<p>Select the Size</p>
-	<table align="center" style = "width:30%">
+	<!-- Working on creating a section for the left side -->
+	<div id="rightSideCustomSection">
+      		<ul>
+				<p>
+					Select the Size Testing something right here.
+					I wonder what all I can do rigth here
+					fdfdfd
+					dfdfdf
+					dfdfdfdfd
+					
+					
+					
+					
+					
+					
+					
+				</p>
+			</ul>
+	</div>
+	<!-- Working on creating a section for the left side -->
+	
+	<!-- Working on creating a section for the middle side -->
+	<!-- div id="#mainContentCustomPage" -->
+		<!-- p -->
+			<!-- Testing main Content -->
+		<!-- /p -->
+	<!-- /div -->
+	
+	<p align = "left">
+		Select the Size
+	</p>
+	<table align="left" style = "width:30%">
 		<tr>
 			<th>Size</th>
 			<th>Select</th>
@@ -32,8 +65,10 @@
 	
 	<div id="tableSpace1"></div>
 	
-	<p>Select the Flavor</p>
-	<table align="center" style = "width:30%">
+	<p align = "left">
+		Select the Flavor
+	</p>
+	<table align="left" style = "width:30%">
 		<tr>
 			<th>Flavors</th>
 			<th>Select</th>

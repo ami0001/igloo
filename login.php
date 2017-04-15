@@ -11,6 +11,9 @@
 	<?php
 		require "check.php";
 	?>
+	<!-- Trying to center the table in the middle of the page -->
+	<div id="register-spacer"></div>
+	<!-- Trying to center the table in the middle of the page -->
 	<p><form name="register" method="post" action="login.php">
 		<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 			<tr>
