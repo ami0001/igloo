@@ -28,8 +28,8 @@ $order="CREATE TABLE tbOrder(
 			orderTime TIMESTAMP(6),
 			fname VARCHAR(32),
 			lname VARCHAR(32),
-			orderStyle CHAR,
-			orderType CHAR,
+			orderStyle VARCHAR(8),
+			orderType VARCHAR(16),
 			email VARCHAR(64),
 			address VARCHAR(64),
 			phone CHAR(10),
@@ -38,7 +38,7 @@ $order="CREATE TABLE tbOrder(
 			flavors VARCHAR(8000),
 			toppings VARCHAR(8000),
 			orderPrice FLOAT,
-			payStyle CHAR,
+			payStyle VARCHAR(8),
 			cardNum CHAR(16),
 			securityCode CHAR(3),
 			expireDate CHAR(5),
@@ -75,8 +75,10 @@ else {
   echo "Error creating table: " . mysqli_error($con) . ".<br>";
 }
 
+$poop = "poop";
+$test = "test";
 // Insert operations
-$item1 = "INSERT INTO tbMenu VALUES ('Spaghetti Sundae', 'A sundae flavored smoothie with spaghetti on top.', 10)";
+$item1 = "INSERT INTO tbMenu (itemName, itemDesc) VALUES ('$poop', '$test')";
 $item2 = "INSERT INTO tbMenu VALUES ('Licorice Latte', 'A latte flavored smoothie with licorice on top.', 15.25)";
 $item3 = "INSERT INTO tbMenu VALUES ('Cherry Chicken', 'A cherry flavored smoothie with chicken on top.', 20.50)";
 $item4 = "INSERT INTO tbMenu VALUES ('Pineapple Pizza', 'A pineapple flavored smoothie with a slice of pizza on top.', 25)";
