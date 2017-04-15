@@ -10,25 +10,25 @@
 	?>
 	<div id="specialties">
 	<p>
-	<!-- Working on creating a section for the left side -->
-	<div id="rightSideCustomSection">
-      		<ul>
-				<p>
-					Select the Size Testing something right here.
-					I wonder what all I can do rigth here
-					fdfdfd
-					dfdfdf
-					dfdfdfdfd
-					
-					
-					
-					
-					
-					
-					
-				</p>
-			</ul>
+	<div id = "wrap">
+		<div class = "left">
+			<p align = "center">
+				Select the Size
+			</p>
+		</div>
+		<div class = "right">
+		
+		</div>
 	</div>
+	<!-- Working on creating a section for the left side -->
+	<!-- div id="rightSideCustomSection" -->
+      		<!-- ul -->
+				<!-- p -->
+					<!-- Select the Size Testing something right here. -->
+					<!-- I wonder what all I can do rigth here -->
+				<!-- /p -->
+			<!-- /ul -->
+	<!-- /div -->
 	<!-- Working on creating a section for the left side -->
 	
 	<!-- Working on creating a section for the middle side -->
@@ -38,10 +38,11 @@
 		<!-- /p -->
 	<!-- /div -->
 	
-	<p align = "left">
+	<div id="tableSpace1"></div
+	<p align = "center">
 		Select the Size
 	</p>
-	<table align="left" style = "width:30%">
+	<table align="center" style = "width:30%">
 		<tr>
 			<th>Size</th>
 			<th>Select</th>
@@ -65,10 +66,10 @@
 	
 	<div id="tableSpace1"></div>
 	
-	<p align = "left">
+	<p align = "center">
 		Select the Flavor
 	</p>
-	<table align="left" style = "width:30%">
+	<table align="center" style = "width:30%">
 		<tr>
 			<th>Flavors</th>
 			<th>Select</th>

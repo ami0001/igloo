@@ -16,6 +16,35 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: Cambria, "Palatino Linotype", "book Antiqua", 	"URW Palladio L" , serif;
 }
 
+#wrap
+{
+	width:1455px;
+}
+
+.left
+{
+	width:500px;
+	background-color: #00d;
+	height:900px;
+	float:left
+	
+}
+.right
+{
+	width:500px;
+	background-color: #00d;
+	height:900px;
+	float:right
+}
+
+.middle
+{
+	width:240px;
+	background-color: #00d;
+	height:123px;
+	float:left
+}
+
 #specialties table
 {
 	border-collapse: collapse;
@@ -179,8 +208,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #tableSpace1
 {
-	height: 120px;
+	height: 30px;
 }
+
+#tableSpace2
+{
+	height: 200px;
+}
+
 
 #heightSpace1
 {
