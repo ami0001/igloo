@@ -29,6 +29,8 @@
 							$phone = null;
 							$cardNum = null;
 							$cvc = null;
+							$month = null;
+							$year = null;
 							$expire = null;
 							$cardName = null;
 							
@@ -90,8 +92,16 @@
 										}
 										elseif ($col == 'expireDate') {
 											$expire = explode("/", $val);
-											$month = $expire[0];
-											$year = $expire[1];
+											
+											if ($expire[0] == "" || $expire[1] == "") {
+												$month = null;
+												$year = null;
+											}
+											else {
+												$month = $expire[0];
+												$year = $expire[1];
+											}
+											
 											echo "<tr>
 													<td style=\"padding-left: 10;\">Expiration Date:</td>
 													<td style=\"padding-right: 10;\"><input name=\"month\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$month."\" readonly> / <input name=\"year\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$year."\" readonly></td>

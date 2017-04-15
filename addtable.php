@@ -9,12 +9,12 @@ if (mysqli_connect_errno()) {
 
 // Create tables
 $account="CREATE TABLE tbAccount(
-			email VARCHAR(64),
-			pass VARCHAR(32),
-			fname VARCHAR(32),
-			lname VARCHAR(32),
-			address VARCHAR(64),
-			phone CHAR(10),
+			email VARCHAR(64) NOT NULL,
+			pass VARCHAR(32) NOT NULL,
+			fname VARCHAR(32) NOT NULL,
+			lname VARCHAR(32) NOT NULL,
+			address VARCHAR(64) NOT NULL,
+			phone CHAR(10) NOT NULL,
 			cardNum CHAR(16),
 			securityCode CHAR(3),
 			expireDate CHAR(5),

@@ -32,6 +32,8 @@
 					$cvc = null;
 					$expire = null;
 					$cardName = null;
+					$month = null;
+					$year = null;
 					
 					if (isset($_SESSION['orderNum'])) {
 						if (isset($_SESSION['email']) && isset($_SESSION['orderNum'])) {
@@ -95,8 +97,16 @@
 											}
 											elseif ($col == 'expireDate') {
 												$expire = explode("/", $val);
-												$month = $expire[0];
-												$year = $expire[1];
+												
+												if ($expire[0] == "" || $expire[1] == "") {
+													$month = null;
+													$year = null;
+												}
+												else {
+													$month = $expire[0];
+													$year = $expire[1];
+												}
+												
 												echo "<tr>
 														<td style=\"padding-left: 10;\">Expiration Date:</td>
 														<td>
