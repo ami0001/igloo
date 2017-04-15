@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 {
 	border-collapse: collapse;
 	background-color: #F1F1F1;
-	text-align: left;m
+	text-align: left;
 }
 
 #specialties table th
@@ -28,25 +28,29 @@ h1, h2, h3, h4, h5, h6 {
 	color: #FFFFFF;
 	background-color: #555555;
 	padding: 5px;
-	border-bottom: 1px solid #D4D4D4;
-	border-left: 1px solid #D4D4D4;
 	border-right: 1px solid #D4D4D4;
+	border-style: hidden;
 	vertical-align: top;
-	text-align: left;
 }
 
 #specialties table td
 {
 	border: 1px solid #D4D4D4;
 	padding: 5px;
-	padding-top: 7px;
-	padding-bottom: 7px;
 	vertical-align: top;
 }
 #specialties table tr:hover
 {
 	background-color: #CCFF00;
-	border-bottom: 1px solid #D4D4D4;
+}
+
+#specialties table tr:first-child th
+{
+	border-left: 1px solid #555555;
+}
+#specialties table tr:last-child th
+{
+	border-right: 1px solid #555555;
 }
 
 #container {
@@ -118,23 +122,22 @@ h1, h2, h3, h4, h5, h6 {
 {
 	text-decoration: underline;
 }
-#check li
-{
-	text-align: right;
+
+#check
+{	
  	list-style-type: none;
 	border: solid 1px #CCCCCC;
 	background-color: #f9f9f9;
-	display: block;
 	padding: 4px;
-	margin: 4px 4px 10px 4px;
-	float: right;
+	margin: auto;
 }
-#check li a
+
+#check a
 {
 	text-decoration: none;
 
 }
-#check li a:hover
+#check a:hover
 {
 	text-decoration: underline;
 }
@@ -146,12 +149,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #heightSpace1
 {
-    height: 50px;
+    height: 25px;
+	background-color: #EBEBEB;
 }
 
 #heightSpace2
 {
     height: 20px;
+	background-color: #EBEBEB;
 }
 
 #mainContent2 
@@ -164,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer-spacer 
 {
     height: 70px;
+	background-color: #EBEBEB;
 }
 
 #footer p {
@@ -180,7 +186,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #div_top_hypers {
-    background-color:#eeeeee;
 	margin-left: 50em;
     display:inline;      
 }
@@ -223,7 +228,7 @@ button
 .simple-ss {
   width:900px;
   height:550px;
-  background-color:red;
+  background-color:blue;
   margin:auto;
   /*background-image:url("http://imgur.com/download/OtK7XDW");*/
   background-image:url("images/iglooBackground3.jpg");

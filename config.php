@@ -6,5 +6,5 @@ $password = "";
 $db       = "dbIgloo";
 
 //Connect to MySQL Server
-$con = mysqli_connect($host,$username,$password,$db) or die("Can not connect to Server.");
+$con = mysqli_connect($host,$username,$password,$db) or die("Cannot connect to server.");
 ?> 

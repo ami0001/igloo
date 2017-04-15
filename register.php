@@ -1,157 +1,128 @@
-<?php
-session_start();
+<?php session_start(); ob_start(); ?>
 
-require "config.php";
-
-//if(isset($_SESSION['email'])){
-//   header("location: index.php");
-//}
-
-if(isset($_POST['submit']))
-{
-   $pass  = $_POST['pass'];
-   $cpass = $_POST['cpass'];
-   $email = $_POST['email'];
-   $address = $_POST['address'];
-   $cemail = $_POST['cemail'];
-   $phone = $_POST['phone'];
-   $fname = $_POST['fname'];
-   $lname = $_POST['lname'];
-      
-   $pass  = stripslashes($pass);
-   $cpass = stripslashes($cpass);
-   $email = stripslashes($email);
-   $cemail = stripslashes($cemail);
-   $address = stripslashes($address);
-   $phone = stripslashes($phone);
-   $fname = stripslashes($fname);
-   $lname = stripslashes($lname);
-   
-   $pass  = mysqli_real_escape_string($con, $pass);
-   $cpass = mysqli_real_escape_string($con, $cpass);
-   $email = mysqli_real_escape_string($con, $email);
-   $cemail = mysqli_real_escape_string($con, $cemail);
-   $address = mysqli_real_escape_string($con, $address);
-   $phone = mysqli_real_escape_string($con, $phone);
-   $fname = mysqli_real_escape_string($con, $fname);
-   $lname = mysqli_real_escape_string($con, $lname);
-   
-   if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "" || $address == "")
-   {
-      echo "One or more fields marked by * were left blank.";
-   }
-   
-   else
-   {
-      if($pass != $cpass || $email != $cemail)
-      {
-		  echo "Passwords or emails do not match.";
-      }
-      else
-      {
-         $query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email'") or die("Cannot query the table!");
-         
-         $row = mysqli_num_rows($query);
-         if($row == 1)
-         {
-            echo "Email is already taken.";
-         }
-         else
-         {
-            $add = mysqli_query($con,"INSERT INTO tbAccount (email, pass, fname, lname, phone) VALUES ('$email', '$pass', '$fname', '$lname', '$phone')") or die("Can't insert.");
-			header("location: login.php");
-         }  echo "Registration successful.";      
-      }      
-   }
-}
-?>
-
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" href="images/favicon.ico" type="favicon/ico" />
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <body style="background-image:url('images/registerBackground.jpg'); background-size: 100% auto; background-repeat: no-repeat;">
-	<!-- this is being used to display the login and register on the same horizontal line -->
-		<div id="div_top_hypers">
-			<ul id="ul_top_hypers">
-				<center>
-					<li> <a href=index.php><img src="images/button/homeButton.png" alt="About Page" title="About Page"></a></li>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<!-- <li><input type="image" src="images/button/aboutButton.png" /> </li> -->
-					<li> <a href=about.php><img src="images/button/aboutButton.png" alt="About Page" title="About Page"></a></li>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<li> <a href=order.php><img src="images/button/orderOnlineButton.png" alt="Order Page" title="Ordert Page"></a></li>
-					<!-- <li> <a href =order.php>Order Online</a></li> -->
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<li> <a href=register.php><img src="images/button/registerButton.png" alt="Register Page" title="Register Page"></a></li>
-					<!-- <li><input type="image" src="images/button/registerButton.png" /> </li> -->
-					<!-- <li> <a href=register.php>Register for an Account</a> </li> -->
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<span style="display:inline-block; width: YOURWIDTH;"></span>
-					<li> <a href=login.php><img src="images/button/loginButton.png" alt="Register Page" title="Register Page"></a></li>
-					<!-- <li><input type="image" src="images/button/loginButton.png" /> </li> -->
-					<!-- <li> <a href=login.php>Login</a> </li> --> 
-				</center>
-			</ul>
-		</div>	<!-- end of div_top_hypers -->
-	<div id="register-spacer"></div> 
-	<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
-	<tr>
-	<form name="register" method="post" action="register.php">
-		<td>
-			<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-				<tr>
-					<td colspan="3"><strong><center>Registration</center></strong></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Email:</td>
-					<td><input name="email" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Confirm Email:</td>
-					<td><input name="cemail" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Password:</td>
-					<td><input name="pass" type="password" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Confirm Password:</td>
-					<td><input name="cpass" type="password" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">First Name:</td>
-					<td><input name="fname" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Last Name:</td>
-					<td><input name="lname" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Address:</td>
-					<td><input name="address" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td style="padding-left: 50;">Phone:</td>
-					<td><input name="phone" type="text" style="width: 325; font-size: 11pt"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" name="submit" value="Create Profile" style="font-size: 11pt"></td>
-				</tr>
-			</table>
-		</td>
-	</form>
-	</tr>
-	</table>
+	<?php
+			require "check.php";
+	?>
+	<p><form name="register" method="post" action="register.php">
+		<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+						<tr>
+							<td colspan="3" style="padding-top: 10; padding-bottom: 10;"><strong><center>Registration</center></strong></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Email:</td>
+							<td><input name="email" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Confirm Email:</td>
+							<td><input name="cemail" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['cemail']) ? $_POST['cemail'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Password:</td>
+							<td><input name="pass" type="password" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['pass']) ? $_POST['pass'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Confirm Password:</td>
+							<td><input name="cpass" type="password" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['cpass']) ? $_POST['cpass'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">First Name:</td>
+							<td><input name="fname" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Last Name:</td>
+							<td><input name="lname" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Address:</td>
+							<td><input name="address" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td style="padding-left: 50;">Phone:</td>
+							<td><input name="phone" type="text" style="width: 325; font-size: 11pt" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" name="submit" value="Create Profile" style="font-size: 11pt"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form></p>
+	<?php
+		require "config.php";
+
+		if (isset($_POST['submit'])) {
+		   $pass  = $_POST['pass'];
+		   $cpass = $_POST['cpass'];
+		   $email = $_POST['email'];
+		   $address = $_POST['address'];
+		   $cemail = $_POST['cemail'];
+		   $phone = $_POST['phone'];
+		   $fname = $_POST['fname'];
+		   $lname = $_POST['lname'];
+			  
+		   $pass  = stripslashes($pass);
+		   $cpass = stripslashes($cpass);
+		   $email = stripslashes($email);
+		   $cemail = stripslashes($cemail);
+		   $address = stripslashes($address);
+		   $phone = stripslashes($phone);
+		   $fname = stripslashes($fname);
+		   $lname = stripslashes($lname);
+		   
+		   $pass  = mysqli_real_escape_string($con, $pass);
+		   $cpass = mysqli_real_escape_string($con, $cpass);
+		   $email = mysqli_real_escape_string($con, $email);
+		   $cemail = mysqli_real_escape_string($con, $cemail);
+		   $address = mysqli_real_escape_string($con, $address);
+		   $phone = mysqli_real_escape_string($con, $phone);
+		   $fname = mysqli_real_escape_string($con, $fname);
+		   $lname = mysqli_real_escape_string($con, $lname);
+		   
+			if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "" || $address == "")
+			{
+				echo "One or more fields marked were left blank.";
+			}
+			else
+			{
+				if($pass != $cpass || $email != $cemail) {
+					echo "Passwords or emails do not match.";
+				}
+				else
+				{
+					$query = mysqli_query($con,"SELECT * FROM tbAccount WHERE email = '$email'") or die("Cannot query the table!");
+					 
+					$row = mysqli_num_rows($query);
+					if($row == 1) {
+						echo "Email is already taken.";
+					}
+					else
+					{
+						$add = "INSERT INTO tbAccount (email, pass, fname, lname, phone, address) VALUES ('$email', '$pass', '$fname', '$lname', '$phone', '$address')";
+						
+						if (mysqli_query($con,$add)) {
+							$_SESSION['email'] = $email;
+							header("location: card.php");
+						}
+						else {
+							echo mysqli_error($con);
+						}	
+					}
+				}
+			}
+		}
+	?>
 </body>
 </html> 
