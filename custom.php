@@ -1,8 +1,11 @@
+<?php session_start(); ob_start(); ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;  	charset=UTF-8" />
-	<title>Custom Order Page</title>
-	<link href="style.css" rel=stylesheet type="text/css" />
+ 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="icon" href="images/favicon.ico" type="favicon/ico" />
+ 	<title>Igloo</title>
+ 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <!-- body style="background-image:url('images/CustomOrderBackground6.jpg'); background-size: 100% 100%; background-repeat: no-repeat;" -->
 <body style="background-color:#6699CC">
@@ -262,15 +265,14 @@ Raspberry:
 	<p>Order Style</p>
 	<table align="center" style = "width:30%">
 		<tr>
-			<th>Order Option</th>
-			<th>Select</th>
+			<th colspan="2">Select Style</th>
 		<tr>
 			<td>Carryout</td>
-			<td><input type="checkbox" name="style" value="Carryout"></td>
+			<td><input type="radio" name="style" value="Carryout"></td>
 		</tr>
 		<tr>
 			<td>Delivery</td>
-			<td><input type="checkbox" name="style" value="Delivery"></td>
+			<td><input type="radio" name="style" value="Delivery"></td>
 		</tr>
 	</table>
 	
@@ -282,11 +284,11 @@ Raspberry:
 			<th>Select</th>
 		<tr>
 			<td>Cash</td>
-			<td><input type="radio" name="style" value="Carryout"></td>
+			<td><input type="radio" name="pay" value="Cash"></td>
 		</tr>
 		<tr>
 			<td>Credit</td>
-			<td><input type="radio" name="style" value="Delivery"></td>
+			<td><input type="radio" name="pay" value="Credit"></td>
 		</tr>	
 		
 	</table>
@@ -301,14 +303,15 @@ Raspberry:
 		
 		if (isset($_POST['place'])) {
 			
-			if (empty($_POST['flavors']) || !isset($_POST['style']) || !isset($_POST['size'])) {
-				echo "Order size, order style, and at least one flavor must be selected.";
+			if (empty($_POST['flavors']) || !isset($_POST['style']) || !isset($_POST['size']) || !isset($_POST['pay'])) {
+				echo "Order size, order style, payment style, and at least one flavor must be selected.";
 			}
 			else {
 				$flavors = $_POST['flavors'];
 				$toppings = $_POST['toppings'];
 				$size = $_POST['size'];
 				$style = $_POST['style'];
+				$pay = $_POST['pay'];
 				$flavorsStr = "";
 				$toppingsStr = "";
 				
@@ -323,7 +326,7 @@ Raspberry:
 				$flavorsStr = substr($flavorsStr, 0, -2);
 				$toppingsStr = substr($toppingsStr, 0, -2);
 				
-				$item = "INSERT INTO tbOrder (flavors, toppings, itemSize, orderStyle, orderType, payStyle) VALUES ('$item', '$size', '$style','Specialty','$pay','$price')";
+				$item = "INSERT INTO tbOrder (flavors, toppings, itemSize, orderStyle, orderType, payStyle) VALUES ('$flavorsStr', '$toppingsStr', '$size', '$style','Custom','$pay')";
 
 				if (mysqli_query($con,$item)) {
 					$query = mysqli_query($con, "SELECT * FROM tbOrder WHERE orderNum = LAST_INSERT_ID()");

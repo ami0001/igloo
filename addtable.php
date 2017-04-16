@@ -20,36 +20,37 @@ $account="CREATE TABLE tbAccount(
 			expireDate CHAR(5),
 			cardName VARCHAR(21),
 			PRIMARY KEY (email),
-			UNIQUE (cardNum)
+			UNIQUE (cardNum),
+			UNIQUE (phone)
 			)";
 			
 $order="CREATE TABLE tbOrder(
-			orderNum BIGINT AUTO_INCREMENT,
-			orderTime TIMESTAMP(6),
-			fname VARCHAR(32),
-			lname VARCHAR(32),
-			orderStyle VARCHAR(8),
-			orderType VARCHAR(16),
-			email VARCHAR(64),
-			address VARCHAR(64),
-			phone CHAR(10),
+			orderNum BIGINT NOT NULL AUTO_INCREMENT CHECK(orderNum >= 1),
+			orderTime TIMESTAMP(6) NOT NULL,
+			fname VARCHAR(32) NOT NULL,
+			lname VARCHAR(32) NOT NULL,
+			orderStyle VARCHAR(8) NOT NULL CHECK(orderStyle = 'Delivery' or orderStyle = 'Carryout'),
+			orderType VARCHAR(16) NOT NULL CHECK(orderType = 'Specialty' or orderType = 'Custom'),
+			email VARCHAR(64) NOT NULL,
+			address VARCHAR(64) NOT NULL,
+			phone CHAR(10) NOT NULL,
 			itemName VARCHAR(32),
-			itemSize VARCHAR(16),
+			itemSize VARCHAR(16) NOT NULL CHECK(itemSize = 'Snowflake' or itemSize = 'Icicle' or itemSize = 'Iceberg' or itemSize = 'Glacier'),
 			flavors VARCHAR(8000),
 			toppings VARCHAR(8000),
-			orderPrice FLOAT,
-			payStyle VARCHAR(8),
+			orderPrice FLOAT NOT NULL CHECK(orderPrice > 0.0),
+			payStyle VARCHAR(8) NOT NULL CHECK(payStyle = 'Cash' or payStyle = 'Credit'),
 			cardNum CHAR(16),
 			securityCode CHAR(3),
 			expireDate CHAR(5),
 			cardName VARCHAR(21),
-			PRIMARY KEY (orderNum)
+			PRIMARY KEY (orderNum, orderTime)
 			)";
 
 $menu="CREATE TABLE tbMenu(
 			itemName VARCHAR(64),
 			itemDesc TEXT,
-			itemPrice FLOAT,
+			itemPrice FLOAT CHECK(itemPrice > 0.0),
 			PRIMARY KEY (itemName)
 			)";
 
