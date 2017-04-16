@@ -108,9 +108,7 @@
 						}
 					}
 				}
-				
-				$price = 
-				
+								
 				$item = "INSERT INTO tbOrder (itemName, itemSize, orderStyle, orderType, payStyle, orderPrice) VALUES ('$item', '$size', '$style','Specialty','$pay','$price')";
 
 				if (mysqli_query($con,$item)) {

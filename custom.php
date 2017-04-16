@@ -7,7 +7,7 @@
 <!-- body style="background-image:url('images/CustomOrderBackground6.jpg'); background-size: 100% 100%; background-repeat: no-repeat;" -->
 <body style="background-color:#6699CC">
 	<?php
-			require "check.php";
+		require "check.php";
 	?>
 	<div id="specialties">
 	<p>
@@ -120,30 +120,29 @@ Raspberry:
 			<!-- Testing main Content -->
 		<!-- /p -->
 	<!-- /div -->
-	
+	<form name="custom" method="post" action="custom.php">
 	<div id="tableSpace2"></div>
 	<p align = "center">
 		Select the Size
 	</p>
 	<table align="center" style = "width:30%">
 		<tr>
-			<th>Size</th>
-			<th>Select</th>
+			<th colspan="2">Size Select</th>
 		<tr>
 			<td>Snowflake</td>
-			<td><input type="radio" name="size" value="S"></td>
+			<td><input type="radio" name="size" value="Snowflake"></td>
 		</tr>
 		<tr>
 			<td>Icicle</td>
-			<td><input type="radio" name="size" value="M"></td>
+			<td><input type="radio" name="size" value="Icicle"></td>
 		</tr>
 		<tr>
 			<td>Iceberg</td>
-			<td><input type="radio" name="size" value="L"></td>
+			<td><input type="radio" name="size" value="Iceberg"></td>
 		</tr>
 		<tr>
 			<td>Glacier</td>
-			<td><input type="radio" name="size" value="XL"></td>
+			<td><input type="radio" name="size" value="Glacier"></td>
 		</tr>
 	</table>
 	
@@ -158,50 +157,50 @@ Raspberry:
 			<th>Select</th>
 		<tr>
 			<td>Strawberry</td>
-			<td><input type="checkbox" name="flavors" value="S"></td>
+			<td><input type="checkbox" name="flavors[]" value="strawberry"></td>
 		</tr>
 		<tr>
 			<td>Blueberry</td>
-			<td><input type="checkbox" name="flavors" value="M"></td>
+			<td><input type="checkbox" name="flavors[]" value="blueberry"></td>
 		</tr>
 		<tr>
 			<td>Blackberry</td>
-			<td><input type="checkbox" name="flavors" value="L"></td>
+			<td><input type="checkbox" name="flavors[]" value="blackberry"></td>
 		</tr>
 		<tr>
 			<td>Pineapple</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="pineapple"></td>
 		</tr>
 		<tr>
 			<td>Mango</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="mango"></td>
 		</tr>
 		<tr>
 			<td>Cocunut</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="coconut"></td>
 		</tr>
 		<tr>
 			<td>Banana</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="banana"></td>
 		</tr>
 		<tr>
 			<td>Kiwi</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="kiwi"></td>
 		</tr>
 		<tr>
 			<td>Peach</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="peach"></td>
 		</tr>
 		<tr>
 			<td>Orange</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="orange"></td>
 		</tr>
 		<tr>
 			<td>Grape</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="grape"></td>
 		</tr><tr>
 			<td>Raspberry</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="flavors[]" value="raspberry"></td>
 		</tr>
 	</table>
 	
@@ -214,72 +213,125 @@ Raspberry:
 			<th>Select</th>
 		<tr>
 			<td>Strawberries</td>
-			<td><input type="checkbox" name="flavors" value="S"></td>
+			<td><input type="checkbox" name="toppings[]" value="strawberries"></td>
 		</tr>
 		<tr>
 			<td>Blueberries</td>
-			<td><input type="checkbox" name="flavors" value="M"></td>
+			<td><input type="checkbox" name="toppings[]" value="blueberries"></td>
 		</tr>
 		<tr>
-			<td>Slice Bananas</td>
-			<td><input type="checkbox" name="flavors" value="L"></td>
+			<td>Sliced Bananas</td>
+			<td><input type="checkbox" name="toppings[]" value="sliced bananas"></td>
 		</tr>
 		<tr>
-			<td>Shredded Cocunut</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td>Shredded Coconut</td>
+			<td><input type="checkbox" name="toppings[]" value="shredded coconut"></td>
 		</tr>
 		<tr>
 			<td>Hemp Seeds</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="hemp seeds"></td>
 		</tr>
 		<tr>
 			<td>Nuts</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="nuts"></td>
 		</tr>
 		<tr>
 			<td>Oatmeal</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="oatmeal"></td>
 		</tr>
 		<tr>
 			<td>Granola</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="granola"></td>
 		</tr>
 		<tr>
 			<td>Dried Mangos</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="dried mangos"></td>
 		</tr>
 		<tr>
 			<td>Raisins</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="raisins"></td>
 		</tr>
 		<tr>
 			<td>Raspberries</td>
-			<td><input type="checkbox" name="flavors" value="XL"></td>
+			<td><input type="checkbox" name="toppings[]" value="raspberries"></td>
 		</tr>
 	</table>
 	
 	<div id="tableSpace1"></div>
 	
-	<p>Order Option</p>
+	<p>Order Style</p>
 	<table align="center" style = "width:30%">
 		<tr>
 			<th>Order Option</th>
 			<th>Select</th>
 		<tr>
-			<td>Pickup</td>
-			<td><input type="checkbox" name="flavors" value="S"></td>
+			<td>Carryout</td>
+			<td><input type="checkbox" name="style" value="Carryout"></td>
 		</tr>
 		<tr>
 			<td>Delivery</td>
-			<td><input type="checkbox" name="flavors" value="M"></td>
+			<td><input type="checkbox" name="style" value="Delivery"></td>
 		</tr>
 	</table>
-	
+	<p><input type="submit" name="place" value="Place Order"></p>
+	</form>
 	<div id="tableSpace1"></div>
 	
 	<li> <a href=order.php><img src="images/button/specialityOrderButton.png" alt="Special Page" title="Special Page"></a></li>
 	
-	
+	<?php
+		require "config.php";
+		
+		if (isset($_POST['place'])) {
+			
+			if (empty($_POST['flavors'] || !isset($_POST['style']) || !isset($_POST['size'])) {
+				echo "Order size, order style, and at least one flavor must be selected.";
+			}
+			else {
+				$flavors = $_POST['flavors'];
+				$toppings = $_POST['toppings'];
+				$size = $_POST['size'];
+				$style = $_POST['style'];
+				$flavorsStr = "";
+				$toppingsStr = "";
+				
+				foreach ($flavors as $flavor) {
+					$flavorsStr = $flavorsStr.$flavor.', ';
+				}
+				
+				foreach ($toppings as $topping) {
+					$toppingsStr = $toppingsStr.$topping.', ';
+				}
+				
+				$flavorsStr = substr($flavorsStr, 0, -2);
+				$toppingsStr = substr($toppingsStr, 0, -2);
+				
+				$item = "INSERT INTO tbOrder (flavors, toppings, itemSize, orderStyle, orderType, payStyle) VALUES ('$item', '$size', '$style','Specialty','$pay','$price')";
+
+				if (mysqli_query($con,$item)) {
+					$query = mysqli_query($con, "SELECT * FROM tbOrder WHERE orderNum = LAST_INSERT_ID()");
+					while ($row = mysqli_fetch_assoc($query)) {
+						foreach ($row as $col => $val) {
+							if ($col == 'orderNum') {
+								$_SESSION['orderNum'] = $val;
+							}
+							elseif ($col == 'orderType') {
+								$_SESSION['orderType'] = $val;
+							}
+							elseif ($col == 'payStyle') {
+								$_SESSION['payStyle'] = $val;
+							}
+						}
+					}
+					
+					header("location: order.php");
+				}
+				else {
+					echo mysqli_error($con);
+				} 
+			}
+		}
+	?>
 
 </body>
 
