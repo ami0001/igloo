@@ -11,7 +11,7 @@
 	<?php
 		require "check.php";
 	?>
-	<p><form name="register" method="post" action="edit.php">
+	<p><form name="profile" method="post" action="edit.php">
 		<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 			<tr>
 				<td>
@@ -104,7 +104,7 @@
 											
 											echo "<tr>
 													<td style=\"padding-left: 10;\">Expiration Date:</td>
-													<td style=\"padding-right: 10;\"><input name=\"month\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$month."\" readonly> / <input name=\"year\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$year."\" readonly></td>
+													<td style=\"padding-right: 10;\"><input name=\"month\" type=\"text\" style=\"font-size: 11pt; width: 25;\" value=\"".$month."\" readonly> / <input name=\"year\" type=\"text\" style=\"font-size: 11pt; width: 25;\" value=\"".$year."\" readonly></td>
 												</tr>";
 										}
 										elseif ($col == 'cardName') {

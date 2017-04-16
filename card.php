@@ -11,10 +11,10 @@
 	<?php
 		require "check.php";
 		
-		(isset($_POST['month'])) ? $month = $_POST['month'] : $month = 1;
-		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 17;
+		(isset($_POST['month'])) ? $month = $_POST['month'] : $month = 0;
+		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 16;
 	?>
-	<p><form name="order" method="post" action="card.php">
+	<p><form name="card" method="post" action="card.php">
 		<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 			<tr>
 				<td>
@@ -76,29 +76,29 @@
 		require "config.php";
 
 		if(isset($_POST['submit']))
-		{
-		   $email = $_SESSION['email'];
-		   $cardNum = $_POST['cardNum'];
-		   $cvc = $_POST['cvc'];
-		   $month = $_POST['month'];
-		   $year = $_POST['year'];
-		   $expire = $month.'/'.$year;
-		   $cardName = $_POST['cardName'];
-			
-		   $cardNum = stripslashes($cardNum);
-		   $cvc = stripslashes($cvc);
-		   $cardName = stripslashes($cardName);
-		   
-		   $cardNum = mysqli_real_escape_string($con, $cardNum);
-		   $cvc = mysqli_real_escape_string($con, $cvc);
-		   $cardName = mysqli_real_escape_string($con, $cardName);
-		   
+		{  
 		   if($cardNum == "" || $cvc == "" || $month == "" || $year == "" || $cardName == "")
 		   {
 				echo "One or more fields were left blank.";
 		   }
 		   else
-		   {		 
+		   {
+				$email = $_SESSION['email'];
+				$cardNum = $_POST['cardNum'];
+				$cvc = $_POST['cvc'];
+				$month = $_POST['month'];
+				$year = $_POST['year'];
+				$expire = $month.'/'.$year;
+				$cardName = $_POST['cardName'];
+				
+				$cardNum = stripslashes($cardNum);
+				$cvc = stripslashes($cvc);
+				$cardName = stripslashes($cardName);
+			   
+				$cardNum = mysqli_real_escape_string($con, $cardNum);
+				$cvc = mysqli_real_escape_string($con, $cvc);
+				$cardName = mysqli_real_escape_string($con, $cardName);
+				
 				$update = "UPDATE tbAccount SET cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE email='$email'";      
 				
 				if (mysqli_query($con,$update)) {

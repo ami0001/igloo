@@ -11,10 +11,10 @@
 	<?php
 		require "check.php";
 		
-		(isset($_POST['nmonth'])) ? $nmonth = $_POST['nmonth'] : $nmonth = 1;
-		(isset($_POST['nyear'])) ? $nyear = $_POST['nyear'] : $nyear = 17;
+		(isset($_POST['nmonth'])) ? $nmonth = $_POST['nmonth'] : $nmonth = 0;
+		(isset($_POST['nyear'])) ? $nyear = $_POST['nyear'] : $nyear = 16;
 	?>
-	<p><form name="register" method="post" action="edit.php">
+	<p><form name="edit" method="post" action="edit.php">
 		<table width="700" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
 			<tr>
 				<td>
@@ -56,11 +56,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Email:</td>
-													<td style=\"padding-right: 10;\"><input name=\"nemail\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
-												</tr>
-												<tr>
-													<td style=\"padding-left: 50;\">Confirm New Email:</td>
-													<td style=\"padding-right: 10;\"><input name=\"cemail\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"nemail\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['nemail']) ? $_POST['nemail'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'pass') {
@@ -71,12 +67,8 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Password:</td>
-													<td style=\"padding-right: 10;\"><input name=\"npass\" type=\"password\" style=\"width: 325; font-size: 11pt\"></td>
-												</tr>
-												<tr>
-													<td style=\"padding-left: 50;\">Confirm New Email:</td>
-													<td style=\"padding-right: 10;\"><input name=\"cpass\" type=\"password\" style=\"width: 325; font-size: 11pt\"></td>
-												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
+													<td style=\"padding-right: 10;\"><input name=\"npass\" type=\"password\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['npass']) ? $_POST['npass'] : ''; echo "\"></td>
+												</tr></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'fname') {
 											$fname = $val;
@@ -86,7 +78,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New First Name:</td>
-													<td style=\"padding-right: 10;\"><input name=\"nfname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"nfname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['nfname']) ? $_POST['nfname'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'lname') {
@@ -97,7 +89,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Last Name:</td>
-													<td style=\"padding-right: 10;\"><input name=\"nlname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"nlname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['nlname']) ? $_POST['nlname'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'address') {
@@ -108,7 +100,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Address:</td>
-													<td style=\"padding-right: 10;\"><input name=\"naddress\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"naddress\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['naddress']) ? $_POST['naddress'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'phone') {
@@ -119,7 +111,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Phone:</td>
-													<td style=\"padding-right: 10;\"><input name=\"nphone\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"nphone\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['nphone']) ? $_POST['nphone'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'cardNum') {
@@ -130,7 +122,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Card Number:</td>
-													<td style=\"padding-right: 10;\"><input name=\"ncardNum\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"ncardNum\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['ncardNum']) ? $_POST['ncardNum'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'securityCode') {
@@ -141,7 +133,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Security Code:</td>
-													<td style=\"padding-right: 10;\"><input name=\"ncvc\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"ncvc\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['ncvc']) ? $_POST['ncvc'] : ''; echo "\"></td>
 												</tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>";
 										}
 										elseif ($col == 'expireDate') {
@@ -158,7 +150,7 @@
 											
 											echo "<tr>
 													<td style=\"padding-left: 50;\">Current Expiration Date:</td>
-													<td style=\"padding-right: 10;\"><input name=\"month\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$month."\" readonly> / <input name=\"year\" type=\"text\" style=\"font-size: 11pt; width: 19;\" value=\"".$year."\" readonly></td>
+													<td style=\"padding-right: 10;\"><input name=\"month\" type=\"text\" style=\"font-size: 11pt; width: 25;\" value=\"".$month."\" readonly> / <input name=\"year\" type=\"text\" style=\"font-size: 11pt; width: 25;\" value=\"".$year."\" readonly></td>
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Expiration Date:</td>
@@ -198,7 +190,7 @@
 												</tr>
 												<tr>
 													<td style=\"padding-left: 50;\">New Name on Card:</td>
-													<td style=\"padding-right: 10;\"><input name=\"ncardName\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+													<td style=\"padding-right: 10;\"><input name=\"ncardName\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['ncardName']) ? $_POST['ncardName'] : ''; echo "\"></td>
 												</tr>";
 										}
 									}
@@ -217,72 +209,59 @@
 	<?php
 		require "config.php";
 		if (isset($_POST['save'])) {
-			$pass  = $_POST['pass'];
-			$cpass = $_POST['cpass'];
-			$npass = $_POST['npass'];
-			$nemail = $_POST['nemail'];
-			$naddress = $_POST['naddress'];
-			$cemail = $_POST['cemail'];
-			$nphone = $_POST['nphone'];
-			$nfname = $_POST['nfname'];
-			$nlname = $_POST['nlname'];
-			$ncardNum = $_POST['ncardNum'];
-			$ncvc = $_POST['ncvc'];
-			$nmonth = $_POST['nmonth'];
-			$nyear = $_POST['nyear'];
-			$nexpire = $nmonth.'/'.$nyear;
-			$ncardName = $_POST['ncardName'];
-			$email = $_POST['email'];
-			$phone = $_POST['phone'];
-			$fname = $_POST['fname'];
-			$lname = $_POST['lname'];
-			$cardNum = $_POST['cardNum'];
-			$cvc = $_POST['cvc'];
-			$month = $_POST['month'];
-			$year = $_POST['year'];
-			$expire = $month.'/'.$year;
-			$cardName = $_POST['cardName'];
-			
-			$pass  = stripslashes($pass);
-			$cpass = stripslashes($cpass);
-			$npass = stripslashes($npass);
-			$cemail = stripslashes($cemail);
-			$nemail = stripslashes($nemail);
-			$naddress = stripslashes($naddress);
-			$nphone = stripslashes($nphone);
-			$nfname = stripslashes($nfname);
-			$nlname = stripslashes($nlname);
-			$ncardNum = stripslashes($ncardNum);
-			$ncvc = stripslashes($ncvc);
-			$ncardName = stripslashes($ncardName);
-			
-			$cpass = mysqli_real_escape_string($con, $cpass);
-			$npass = mysqli_real_escape_string($con, $npass);
-			$nemail = mysqli_real_escape_string($con, $nemail);
-			$cemail = mysqli_real_escape_string($con, $cemail);
-			$naddress = mysqli_real_escape_string($con, $naddress);
-			$nphone = mysqli_real_escape_string($con, $nphone);
-			$nfname = mysqli_real_escape_string($con, $nfname);
-			$nlname = mysqli_real_escape_string($con, $nlname);
-			$ncardNum = mysqli_real_escape_string($con, $ncardNum);
-			$ncvc = mysqli_real_escape_string($con, $ncvc);
-			$ncardName = mysqli_real_escape_string($con, $ncardName);
-			
-			if ($nemail != $cemail) {
-				echo "New emails did not match.";
-			}/*
-			elseif ($pass != $_SESSION['pass']) {
-				echo "The current password you entered was incorrect.";
+			if ($nemail == "" && $npass == "" && $nfname == "" && $nlname == "" && $naddress == "" && $nphone == "" && $ncardNum == "" && $ncvc == "" && $nmonth == "" && $nyear == "" && $ncardName == "") {
+				echo "No information was changed.";
 			}
-			elseif ($npass != $cpass) {
-				echo "New passwords did not match.";
-			}*/
 			else {
+				$pass  = $_POST['pass'];
+				$npass = $_POST['npass'];
+				$nemail = $_POST['nemail'];
+				$naddress = $_POST['naddress'];
+				$nphone = $_POST['nphone'];
+				$nfname = $_POST['nfname'];
+				$nlname = $_POST['nlname'];
+				$ncardNum = $_POST['ncardNum'];
+				$ncvc = $_POST['ncvc'];
+				$ncardName = $_POST['ncardName'];
+				$email = $_POST['email'];
+				$phone = $_POST['phone'];
+				$fname = $_POST['fname'];
+				$lname = $_POST['lname'];
+				$cardNum = $_POST['cardNum'];
+				$cvc = $_POST['cvc'];
+				$month = $_POST['month'];
+				$year = $_POST['year'];
+				$expire = $month.'/'.$year;
+				$cardName = $_POST['cardName'];
+				$nmonth = $_POST['nmonth'];
+				$nyear = $_POST['nyear'];
+				$nexpire = $nmonth.'/'.$nyear;
+				
+				$pass  = stripslashes($pass);
+				$npass = stripslashes($npass);
+				$nemail = stripslashes($nemail);
+				$naddress = stripslashes($naddress);
+				$nphone = stripslashes($nphone);
+				$nfname = stripslashes($nfname);
+				$nlname = stripslashes($nlname);
+				$ncardNum = stripslashes($ncardNum);
+				$ncvc = stripslashes($ncvc);
+				$ncardName = stripslashes($ncardName);
+				
+				$npass = mysqli_real_escape_string($con, $npass);
+				$nemail = mysqli_real_escape_string($con, $nemail);
+				$naddress = mysqli_real_escape_string($con, $naddress);
+				$nphone = mysqli_real_escape_string($con, $nphone);
+				$nfname = mysqli_real_escape_string($con, $nfname);
+				$nlname = mysqli_real_escape_string($con, $nlname);
+				$ncardNum = mysqli_real_escape_string($con, $ncardNum);
+				$ncvc = mysqli_real_escape_string($con, $ncvc);
+				$ncardName = mysqli_real_escape_string($con, $ncardName);
+				
 				if ($nemail != "")
 					$email = $nemail;
 				if ($npass != "")
 					$pass = $npass;
-				echo "Password: ". $pass;
 				if ($nfname != "")
 					$fname = $nfname;
 				if ($nlname != "")
@@ -306,7 +285,7 @@
 					$_SESSION['email'] = $email;
 					$_SESSION['pass'] = $pass;
 					
-					header("location: edit.php");
+					header("location: profile.php");
 				}
 				else {
 					echo mysqli_error($con);

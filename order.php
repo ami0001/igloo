@@ -11,8 +11,8 @@
 	<?php
 		require "check.php";
 		
-		(isset($_POST['month'])) ? $month = $_POST['month'] : $month = 1;
-		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 17;
+		(isset($_POST['month'])) ? $month = $_POST['month'] : $month = 0;
+		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 16;
 	?>
 	<p><form name="order" method="post" action="order.php">
 	<table align="center" cellpadding="0" cellspacing="1" border="1px solid black">
@@ -111,6 +111,7 @@
 														<td style=\"padding-left: 10;\">Expiration Date:</td>
 														<td>
 															<select name=\"month\">
+																<option disabled selected value></option>
 																<option "; if ($month == 1) echo 'selected'; echo " value=\"01\">01</option>
 																<option "; if ($month == 2) echo 'selected'; echo " value=\"02\">02</option>
 																<option "; if ($month == 3) echo 'selected'; echo " value=\"03\">03</option>
@@ -126,6 +127,7 @@
 															</select>
 															/
 															<select name=\"year\">
+																<option disabled selected value></option>
 																<option "; if ($year == 17) echo 'selected'; echo " value=\"17\">17</option>
 																<option "; if ($year == 18) echo 'selected'; echo " value=\"18\">18</option>
 																<option "; if ($year == 19) echo 'selected'; echo " value=\"19\">19</option>
@@ -192,36 +194,37 @@
 								if ($_SESSION['payStyle'] == 'Credit') {
 									echo "<tr>
 											<td style=\"padding-left: 10;\">Email:</td>
-											<td><input name=\"email\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"email\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['email']) ? $_POST['email'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">First Name:</td>
-											<td style=\"padding-right: 10;\"><input name=\"fname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td style=\"padding-right: 10;\"><input name=\"fname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['fname']) ? $_POST['fname'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Last Name:</td>
-											<td ><input name=\"lname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"lname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['lname']) ? $_POST['lname'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Address:</td>
-											<td><input name=\"address\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"address\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['address']) ? $_POST['address'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Phone:</td>
-											<td><input name=\"phone\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"phone\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['phone']) ? $_POST['phone'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Card Number:</td>
-											<td><input name=\"cardNum\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"cardNum\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['cardNum']) ? $_POST['cardNum'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Security Code:</td>
-											<td><input name=\"cvc\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"cvc\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['cvc']) ? $_POST['cvc'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Expiration Date:</td>
 											<td>
 												<select name=\"month\">
+													<option disabled selected value></option>
 													<option "; if ($month == 1) echo 'selected'; echo " value=\"01\">01</option>
 													<option "; if ($month == 2) echo 'selected'; echo " value=\"02\">02</option>
 													<option "; if ($month == 3) echo 'selected'; echo " value=\"03\">03</option>
@@ -237,6 +240,7 @@
 												</select>
 												/
 												<select name=\"year\">
+													<option disabled selected value></option>
 													<option "; if ($year == 17) echo 'selected'; echo " value=\"17\">17</option>
 													<option "; if ($year == 18) echo 'selected'; echo " value=\"18\">18</option>
 													<option "; if ($year == 19) echo 'selected'; echo " value=\"19\">19</option>
@@ -247,29 +251,29 @@
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Name on Card:</td>
-											<td><input name=\"cardName\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"cardName\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['cardName']) ? $_POST['cardName'] : ''; echo "\"></td>
 										</tr>";
 								}
 								elseif ($_SESSION['payStyle'] == 'Cash') {
 									echo "<tr>
 											<td style=\"padding-left: 10;\">Email:</td>
-											<td><input name=\"email\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"email\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['email']) ? $_POST['email'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">First Name:</td>
-											<td style=\"padding-right: 10;\"><input name=\"fname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td style=\"padding-right: 10;\"><input name=\"fname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['fname']) ? $_POST['fname'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Last Name:</td>
-											<td ><input name=\"lname\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td ><input name=\"lname\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['lname']) ? $_POST['lname'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Address:</td>
-											<td><input name=\"address\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"address\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['address']) ? $_POST['address'] : ''; echo "\"></td>
 										</tr>
 										<tr>
 											<td style=\"padding-left: 10;\">Phone:</td>
-											<td><input name=\"phone\" type=\"text\" style=\"width: 325; font-size: 11pt\"></td>
+											<td><input name=\"phone\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\""; echo isset($_POST['phone']) ? $_POST['phone'] : ''; echo "\"></td>
 										</tr>";
 								}
 							}
@@ -432,30 +436,18 @@
 		   $address = $_POST['address'];
 		   $email = $_POST['email'];
 		   $phone = $_POST['phone'];
-		   $cardNum = $_POST['cardNum'];
-		   $cvc = $_POST['cvc'];
-		   $month = $_POST['month'];
-		   $year = $_POST['year'];
-		   $expire = $month.'/'.$year;
-		   $cardName = $_POST['cardName'];
 		   
 		   $fname = stripslashes($fname);
 		   $lname = stripslashes($lname);
 		   $address = stripslashes($address);
 		   $email = stripslashes($email);
 		   $phone = stripslashes($phone);
-		   $cardNum = stripslashes($cardNum);
-		   $cvc = stripslashes($cvc);
-		   $cardName = stripslashes($cardName);
 		   
 		   $fname  = mysqli_real_escape_string($con, $fname);
 		   $lname = mysqli_real_escape_string($con, $lname);
 		   $address = mysqli_real_escape_string($con, $address);
 		   $email = mysqli_real_escape_string($con, $email);
 		   $phone = mysqli_real_escape_string($con, $phone);
-		   $cardNum = mysqli_real_escape_string($con, $cardNum);
-		   $cvc = mysqli_real_escape_string($con, $cvc);
-		   $cardName = mysqli_real_escape_string($con, $cardName);
 		   
 		   if (isset($_SESSION['payStyle'])) {
 			   if ($_SESSION['payStyle'] == 'Credit') {
@@ -465,6 +457,21 @@
 				   }
 				   else
 				   {
+						$cardNum = $_POST['cardNum'];
+						$cvc = $_POST['cvc'];
+						$month = $_POST['month'];
+						$year = $_POST['year'];
+						$expire = $month.'/'.$year;
+						$cardName = $_POST['cardName'];
+					   
+						$cardNum = stripslashes($cardNum);
+						$cvc = stripslashes($cvc);
+						$cardName = stripslashes($cardName);
+					   
+						$cardNum = mysqli_real_escape_string($con, $cardNum);
+						$cvc = mysqli_real_escape_string($con, $cvc);
+						$cardName = mysqli_real_escape_string($con, $cardName);
+						
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone', cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){

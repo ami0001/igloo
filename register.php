@@ -67,39 +67,39 @@
 		require "config.php";
 
 		if (isset($_POST['submit'])) {
-		   $pass  = $_POST['pass'];
-		   $cpass = $_POST['cpass'];
-		   $email = $_POST['email'];
-		   $address = $_POST['address'];
-		   $cemail = $_POST['cemail'];
-		   $phone = $_POST['phone'];
-		   $fname = $_POST['fname'];
-		   $lname = $_POST['lname'];
-			  
-		   $pass  = stripslashes($pass);
-		   $cpass = stripslashes($cpass);
-		   $email = stripslashes($email);
-		   $cemail = stripslashes($cemail);
-		   $address = stripslashes($address);
-		   $phone = stripslashes($phone);
-		   $fname = stripslashes($fname);
-		   $lname = stripslashes($lname);
-		   
-		   $pass  = mysqli_real_escape_string($con, $pass);
-		   $cpass = mysqli_real_escape_string($con, $cpass);
-		   $email = mysqli_real_escape_string($con, $email);
-		   $cemail = mysqli_real_escape_string($con, $cemail);
-		   $address = mysqli_real_escape_string($con, $address);
-		   $phone = mysqli_real_escape_string($con, $phone);
-		   $fname = mysqli_real_escape_string($con, $fname);
-		   $lname = mysqli_real_escape_string($con, $lname);
-		   
 			if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "" || $address == "")
 			{
 				echo "One or more fields marked were left blank.";
 			}
 			else
 			{
+				$pass  = $_POST['pass'];
+				$cpass = $_POST['cpass'];
+				$email = $_POST['email'];
+				$address = $_POST['address'];
+				$cemail = $_POST['cemail'];
+				$phone = $_POST['phone'];
+				$fname = $_POST['fname'];
+				$lname = $_POST['lname'];
+				  
+				$pass  = stripslashes($pass);
+				$cpass = stripslashes($cpass);
+				$email = stripslashes($email);
+				$cemail = stripslashes($cemail);
+				$address = stripslashes($address);
+				$phone = stripslashes($phone);
+				$fname = stripslashes($fname);
+				$lname = stripslashes($lname);
+			   
+				$pass  = mysqli_real_escape_string($con, $pass);
+				$cpass = mysqli_real_escape_string($con, $cpass);
+				$email = mysqli_real_escape_string($con, $email);
+				$cemail = mysqli_real_escape_string($con, $cemail);
+				$address = mysqli_real_escape_string($con, $address);
+				$phone = mysqli_real_escape_string($con, $phone);
+				$fname = mysqli_real_escape_string($con, $fname);
+				$lname = mysqli_real_escape_string($con, $lname);
+				
 				if($pass != $cpass || $email != $cemail) {
 					echo "Passwords or emails do not match.";
 				}
