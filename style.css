@@ -24,16 +24,16 @@ h1, h2, h3, h4, h5, h6 {
 .left
 {
 	width:500px;
-	background-color: #00d;
-	height:900px;
+	/*background-color: #EBEBEB;*/
+	height:1400px;
 	float:left
 	
 }
 .right
 {
 	width:500px;
-	background-color: #00d;
-	height:900px;
+	/*background-color: #EBEBEB;*/
+	height:1400px;
 	float:right
 }
 
@@ -43,6 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #00d;
 	height:123px;
 	float:left
+}
+
+textarea  
+{  
+    font-size: 13pt;
+   font-family: Arial  
 }
 
 #specialties table
@@ -213,9 +219,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #tableSpace2
 {
-	height: 200px;
+	height: 20px;
 }
 
+#itemDescriptionSpace
+{
+	height: 20px;
+}
+
+#pictureDescriptionSpace
+{
+	height: 20px;
+}
+
+#pictureDescriptionSpace2
+{
+	height: 80px;
+}
 
 #heightSpace1
 {
