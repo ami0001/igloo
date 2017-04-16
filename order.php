@@ -451,7 +451,7 @@
 		   
 		   if (isset($_SESSION['payStyle'])) {
 			   if ($_SESSION['payStyle'] == 'Credit') {
-				   if($fname == "" || $lname == "" || $address == "" || $email == "" || $phone == "" || $cardNum == "" || $cvc == "" || $month == "" || $year == "" || $cardName == "")
+				   if($_POST['fname'] == "" || $_POST['lname'] == "" || $_POST['address'] == "" || $_POST['email'] == "" || $_POST['phone'] == "" || $_POST['cardNum'] == "" || $_POST['cvc'] == "" || !isset($_POST['month']) || !isset($_POST['year']) || $_POST['cardName'] == "")
 				   {
 						echo "One or more fields were left blank.";
 				   }

@@ -77,7 +77,7 @@
 
 		if(isset($_POST['submit']))
 		{  
-		   if($cardNum == "" || $cvc == "" || $month == "" || $year == "" || $cardName == "")
+		   if($_POST['cardNum'] == "" || $_POST['cvc'] == "" || !isset($_POST['month']) || !isset($_POST['year']) || $_POST['cardName'] == "")
 		   {
 				echo "One or more fields were left blank.";
 		   }

@@ -67,7 +67,7 @@
 		require "config.php";
 
 		if (isset($_POST['submit'])) {
-			if($pass == "" || $cpass == "" || $email == "" || $cemail == "" || $phone == "" || $fname == "" || $lname == "" || $address == "")
+			if($_POST['pass'] == "" || $_POST['cpass'] == "" || $_POST['email'] == "" || $_POST['cemail'] == "" || $_POST['phone'] == "" || $_POST['fname'] == "" || $_POST['lname'] == "" || $_POST['address'] == "")
 			{
 				echo "One or more fields marked were left blank.";
 			}

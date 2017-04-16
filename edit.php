@@ -209,7 +209,7 @@
 	<?php
 		require "config.php";
 		if (isset($_POST['save'])) {
-			if ($nemail == "" && $npass == "" && $nfname == "" && $nlname == "" && $naddress == "" && $nphone == "" && $ncardNum == "" && $ncvc == "" && $nmonth == "" && $nyear == "" && $ncardName == "") {
+			if ($_POST['nemail'] == "" && $_POST['npass'] == "" && $_POST['nfname'] == "" && $_POST['nlname'] == "" && $_POST['naddress'] == "" && $_POST['nphone'] == "" && $_POST['ncardNum'] == "" && $_POST['ncvc'] == "" && !isset($_POST['nmonth']) && !isset($_POST['nyear']) && $_POST['ncardName'] == "") {
 				echo "No information was changed.";
 			}
 			else {
