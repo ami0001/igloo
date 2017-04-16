@@ -273,6 +273,23 @@ Raspberry:
 			<td><input type="checkbox" name="style" value="Delivery"></td>
 		</tr>
 	</table>
+	
+	<div id="tableSpace3"></div>	
+	<p>Payment Style</p>
+	<table align="center" style = "width:30%">
+		<tr>
+			<th>Select Payment</th>
+			<th>Select</th>
+		<tr>
+			<td>Cash</td>
+			<td><input type="radio" name="style" value="Carryout"></td>
+		</tr>
+		<tr>
+			<td>Credit</td>
+			<td><input type="radio" name="style" value="Delivery"></td>
+		</tr>	
+		
+	</table>
 	<p><input type="submit" name="place" value="Place Order"></p>
 	</form>
 	<div id="tableSpace1"></div>
@@ -284,7 +301,7 @@ Raspberry:
 		
 		if (isset($_POST['place'])) {
 			
-			if (empty($_POST['flavors'] || !isset($_POST['style']) || !isset($_POST['size'])) {
+			if (empty($_POST['flavors']) || !isset($_POST['style']) || !isset($_POST['size'])) {
 				echo "Order size, order style, and at least one flavor must be selected.";
 			}
 			else {
