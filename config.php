@@ -1,8 +1,8 @@
 <?php
 //Information to connect to your MySQL Server AND DB
-$host     = "localhost";
-$username = "root";
-$password = "";
+$host     = "104.155.172.250";
+$username = "ami0001";
+$password = "TheIgl00!";
 $db       = "dbIgloo";
 
 //Connect to MySQL Server
