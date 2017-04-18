@@ -463,6 +463,7 @@
 						$year = $_POST['year'];
 						$expire = $month.'/'.$year;
 						$cardName = $_POST['cardName'];
+						$creditEmail = "";
 					   
 						$cardNum = stripslashes($cardNum);
 						$cvc = stripslashes($cvc);
@@ -475,6 +476,7 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone', cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
+							$creditEmail = "";
 							header("location: index.php");
 						}
 						else {
@@ -489,9 +491,12 @@
 				   }
 				   else
 				   {
+						$cashEmail = "";
+						
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
+							$cashEmail = "";
 							header("location: index.php");
 						}
 						else {
