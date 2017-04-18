@@ -292,6 +292,7 @@
 						require "config.php";
 						
 						$orderNum = $_SESSION['orderNum'];
+						$orderTime = $_SESSION['orderTime'];
 						$payStyle = $_SESSION['payStyle'];
 						$orderStyle = null;
 						$itemName = null;
@@ -476,7 +477,16 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone', cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$creditEmail = "";
+							$creditEmail = "'$orderTime'\n
+											Order '$orderNum'\n
+											'$orderStyle'\n
+											'$orderType'\n
+											'$fname' '$lname'\n
+											'$address'\n
+											'$phone'\n
+											'$price'\n
+											'$payStyle'";
+							mail($email, "The Igloo - Order Confirmation for '$email'", $cashEmail);
 							header("location: index.php");
 						}
 						else {
@@ -496,7 +506,16 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$cashEmail = "";
+							$cashEmail = "'$orderTime'\n
+										Order '$orderNum'\n
+										'$orderStyle'\n
+										'$orderType'\n
+										'$fname' '$lname'\n
+										'$address'\n
+										'$phone'\n
+										'$price'\n
+										'$payStyle'";
+							mail($email, "The Igloo - Order Confirmation for '$email'", $cashEmail);
 							header("location: index.php");
 						}
 						else {
