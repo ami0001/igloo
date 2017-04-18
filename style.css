@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 .left2
 {
 	width:500px;
-	background-color: #F1F1F1;
+	/*background-color: #F1F1F1;*/
 	height:400px;
 	float:left
 	
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 .right2
 {
 	width:500px;
-	background-color: #F1F1F1;
+	/*background-color: #F1F1F1;*/
 	height:400px;
 	float:right
 }
@@ -265,6 +265,11 @@ textarea
 #customSpace
 {
 	height: 50px;
+}
+
+#customSpace1
+{
+	height: 40px;
 }
 
 #itemDescriptionSpace

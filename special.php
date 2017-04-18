@@ -54,19 +54,19 @@
 			<div id = "wrap">
 				<div class = "left2">
 					<p align = "center">
-						Left Test
+						<img src="images/smoothiePic4.jpg" alt="Login" style="width:500px;height:400px;border:5px solid #0033CC;">
 					</p>
 
 				</div>
 				<div class = "right2">
 					<p align = "center">
-						Right Test
+						<img src="images/smoothiePic45jpg.jpg" alt="Login" style="width:500px;height:400px;border:5px solid #0033CC;">
 					</p>
 				</div>
 			</div>
 			<!-- div id="customSpace" -->
 			<p><table align="center">
-				<div id="customSpace">
+				<div id="customSpace1">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Size</th>
 				</tr>
@@ -80,7 +80,7 @@
 				</tr>
 			</table></p>
 			<p><table align="center">
-				<div id="customSpace">
+				<div id="customSpace1">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Style</th>
 				</tr>
@@ -90,7 +90,7 @@
 				</tr>
 			</table></p>
 			<p><table align="center">
-				<div id="customSpace">
+				<div id="customSpace1">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Payment</th>
 				</tr>
