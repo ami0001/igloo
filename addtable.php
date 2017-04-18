@@ -78,13 +78,13 @@ else {
 
 // Insert operations
 $item1 = "INSERT INTO tbMenu VALUES ('Honeydew-Almond', 'This smoothie is dedicated to the almond lovers in the world. Enjoy a nice honeydew smoothie with sprinkles of almond scattered within! YUM!', 10)";
-$item2 = "INSERT INTO tbMenu VALUES ('Banana PB&J', 'They doubted us. They said it couldn't be done. We proved them wrong. Enjoy this limited offering of a PB&J smoothie', 7)";
+$item2 = "INSERT INTO tbMenu VALUES ('Banana PB&J', 'They doubted us. They said it could not be done. We proved them wrong. Enjoy this limited offering of a PB&J smoothie', 7)";
 $item3 = "INSERT INTO tbMenu VALUES ('Birthday Cake', 'Having a birthday cake for a party is so simple. Now you can be the life of the party by ordering the birthday cake smoothie. We will even throw in one pack of candle on the side for free', 15)";
 $item4 = "INSERT INTO tbMenu VALUES ('Strawberry Shortcake', 'Do you like Strawberry Shortcake? Every wondered what one would taste like in a smoothie? Well say no more...press the select button and enjoy a strawberry flavored smoothie', 10)";
 $item5 = "INSERT INTO tbMenu VALUES ('Tangerine Honey', 'Enjoy a tangerine smoothie with a hint of honey glazed on top!', 9)";
 $item6 = "INSERT INTO tbMenu VALUES ('Watermelon', 'Enjoy a watermelon flavored smoothie for the summer. This item is only available for the summer so get it before it is to late!', 11)";
-$item7 = "INSERT INTO tbMenu VALUES ('Pineapple-Mango', 'Who doesn't love Mango? Who doesn't love pineapple? Adding them together only make sense right? Well we did it', 10)";
-$item8 = "INSERT INTO tbMenu VALUES ('Oatmeal Cookie', 'Nothing taste better than Grandma's oatmeal cookies. Well now you can send her a smoothie to thank her!', 11)";
+$item7 = "INSERT INTO tbMenu VALUES ('Pineapple-Mango', 'Who does not love Mango? Who does not love pineapple? Adding them together only make sense right? Well we did it', 10)";
+$item8 = "INSERT INTO tbMenu VALUES ('Oatmeal Cookie', 'Nothing taste better than Grandma oatmeal cookies. Well now you can send her a smoothie to thank her!', 11)";
 
 if (mysqli_query($con,$item1)) {
   echo "Item 1 was successfully inserted into tbMenu."."<br>";
@@ -115,28 +115,28 @@ else {
 }  
 
 if (mysqli_query($con,$item5)) {
-  echo "Item 4 was successfully inserted into tbMenu."."<br>";
+  echo "Item 5 was successfully inserted into tbMenu."."<br>";
 }
 else {
   echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 } 
 
 if (mysqli_query($con,$item6)) {
-  echo "Item 4 was successfully inserted into tbMenu."."<br>";
+  echo "Item 6 was successfully inserted into tbMenu."."<br>";
 }
 else {
   echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 } 
 
 if (mysqli_query($con,$item7)) {
-  echo "Item 4 was successfully inserted into tbMenu."."<br>";
+  echo "Item 7 was successfully inserted into tbMenu."."<br>";
 }
 else {
   echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";
 } 
 
 if (mysqli_query($con,$item8)) {
-  echo "Item 4 was successfully inserted into tbMenu."."<br>";
+  echo "Item 8 was successfully inserted into tbMenu."."<br>";
 }
 else {
   echo "Error inserting into table tbMenu: " . mysqli_error($con) . ".<br>";

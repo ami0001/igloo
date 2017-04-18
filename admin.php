@@ -6,7 +6,7 @@ if (isset($_POST['submit']))
 
 if (isset($_POST['drop']))
 {
-	$con=mysqli_connect("localhost","root","","dbIgloo");
+	$con=mysqli_connect("104.155.172.250","ami0001","TheIgl00!","dbIgloo");
 	$null=0;
 	
 	$drop1 = "DROP TABLE tbAccount";
