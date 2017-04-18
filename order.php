@@ -345,7 +345,7 @@
 											$price = $val;
 											echo "<tr>
 													<td style=\"padding-left: 10;\">Price with Tax:</td>
-													<td style=\"padding-right: 10;\"><input name=\"price\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\"$".$price."\" readonly></td>
+													<td style=\"padding-right: 10;\"><input name=\"price\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\"$".number_format($price, 2, '.', '')."\" readonly></td>
 												</tr>";
 										}
 										elseif ($col == 'payStyle') {
@@ -404,7 +404,7 @@
 											$price = $val;
 											echo "<tr>
 													<td style=\"padding-left: 10;\">Price with Tax:</td>
-													<td style=\"padding-right: 10;\"><input name=\"price\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\"$".$price."\" readonly></td>
+													<td style=\"padding-right: 10;\"><input name=\"price\" type=\"text\" style=\"width: 325; font-size: 11pt\" value=\"$".number_format($price, 2, '.', '')."\" readonly></td>
 												</tr>";
 										}
 										elseif ($col == 'payStyle') {
@@ -444,6 +444,8 @@
 		   $email = stripslashes($email);
 		   $phone = stripslashes($phone);
 		   
+		   echo $email;
+		   
 		   $fname  = mysqli_real_escape_string($con, $fname);
 		   $lname = mysqli_real_escape_string($con, $lname);
 		   $address = mysqli_real_escape_string($con, $address);
@@ -477,16 +479,16 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone', cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$creditEmail = "'$orderTime'\n
-											Order '$orderNum'\n
-											'$orderStyle'\n
-											'$orderType'\n
-											'$fname' '$lname'\n
-											'$address'\n
-											'$phone'\n
-											'$price'\n
-											'$payStyle'";
-							mail($email, "The Igloo - Order Confirmation for '$email'", $cashEmail);
+							$creditEmail = "Order Time: $orderTime\n
+										Order Number: $orderNum\n
+										Order Style: $orderStyle\n
+										Order Type: $orderType\n
+										Name: $fname $lname\n
+										Address: $address\n
+										Phone: $phone\n
+										Price: \$" . number_format($price, 2, '.', '') . "\n
+										Payment: $payStyle";
+							mail($email, "The Igloo - Order Confirmation for '$email'", $creditEmail);
 							header("location: index.php");
 						}
 						else {
@@ -506,15 +508,15 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$cashEmail = "'$orderTime'\n
-										Order '$orderNum'\n
-										'$orderStyle'\n
-										'$orderType'\n
-										'$fname' '$lname'\n
-										'$address'\n
-										'$phone'\n
-										'$price'\n
-										'$payStyle'";
+							$cashEmail = "Order Time: $orderTime\n
+										Order Number: $orderNum\n
+										Order Style: $orderStyle\n
+										Order Type: $orderType\n
+										Name: $fname $lname\n
+										Address: $address\n
+										Phone: $phone\n
+										Price: \$" . number_format($price, 2, '.', '') . "\n
+										Payment: $payStyle";
 							mail($email, "The Igloo - Order Confirmation for '$email'", $cashEmail);
 							header("location: index.php");
 						}
