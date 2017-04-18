@@ -51,6 +51,19 @@
 					}
 				?>
 			</table></p>
+			<div id = "wrap">
+				<div class = "left2">
+					<p align = "center">
+						Left Test
+					</p>
+
+				</div>
+				<div class = "right2">
+					<p align = "center">
+						Right Test
+					</p>
+				</div>
+			</div>
 			<!-- div id="customSpace" -->
 			<p><table align="center">
 				<div id="customSpace">

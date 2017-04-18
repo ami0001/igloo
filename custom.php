@@ -15,21 +15,21 @@
 	?>
 	<div id="specialties">
 	<p>
-	<div id = "wrap">
+	<div id = "wrap2">
 		<div class = "left">
 			<!-- Size descriptions  -->
 			<p align = "center">
 				Size Descriptions
 			</p>
-			<textarea cols="50" rows="8" readonly style = "resize:none;border:5px solid #0033CC;">Here are the Igloo we offer four different cup sizes. 
+			<textarea cols="50" rows="8" readonly style = "resize:none;border:5px solid #0033CC;">Here are the Igloo we offer four different cup sizes. The size of the cup is going to determine the base price of the smoothie.
 			
-SnowFlake: This size is for those who would like a small sample.
+SnowFlake: $2
 
-Icicle: This size is for those who would prefer a small cup.
+Icicle: $4
 
-Iceberg: This size is for those who are up for the challenge.
+Iceberg: $6
 
-Glacier: This size is only for champions.
+Glacier: $8
 				 
 			</textarea>
 			
@@ -40,13 +40,15 @@ Glacier: This size is only for champions.
 			</p>
 			<textarea cols="50" rows="19" readonly style = "resize:none;border:5px solid #0033CC;">Here at the Igloo we offer a variety of different flavors.
 			
-There are currently 12 flavors to choose from
+There are currently 12 flavors to choose from. The flavors selected are not going to effect the price of the smoothie.
+
+You can select one flavor or multiple flavors. The possibilites are endless.  
 
 Strawberry: Our strawberries are picked from the freshest gardens
 
 Blueberry: Our blueberries are flown in from Paris
 
-Pineapple: Our Pineapples are hand delivered 
+Pineapple: Our Pineapples are hand delivered by M
 
 Mango:
 
@@ -71,9 +73,11 @@ Raspberry:
 			<p align = "center">
 				Topping Descriptions
 			</p>
-			<textarea cols="50" rows="18" readonly style = "resize:none;border:5px solid #0033CC;">
-				This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
-				dkfjdkfjdksajfdlkajkjfkdasjdkjfdkajfdkajkdjfdkafjdkfjdkaldj
+			<textarea cols="50" rows="18" readonly style = "resize:none;border:5px solid #0033CC;">Here at the Igloo we offer a variety of toppings to select from.
+
+Each topping is 50 cents. 
+
+You are able to add as many toppings as you would like to your smoothie!
 			</textarea>
 			
 			<!-- Order Options -->
@@ -81,9 +85,11 @@ Raspberry:
 			<p align = "center">
 				Order Option
 			</p>
-			<textarea cols="50" rows="4" readonly style = "resize:none;border:5px solid #0033CC;">
-				This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
-				dkfjdkfjdksajfdlkajkjfkdasjdkjfdkajfdkajkdjfdkafjdkfjdkaldj
+			<textarea cols="50" rows="4" readonly style = "resize:none;border:5px solid #0033CC;"> Here at the Igloo we support two different forms of ordering.
+
+Carryout: The order will be available for pickup at the nearest store
+
+Delivery: The order will be delivered to your front door steps
 			</textarea>
 
 		</div>
