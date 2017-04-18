@@ -147,6 +147,9 @@
 							if ($col == 'orderNum') {
 								$_SESSION['orderNum'] = $val;
 							}
+							elseif ($col == 'orderTime') {
+								$_SESSION['orderTime'] = $val;
+							}
 							elseif ($col == 'orderType') {
 								$_SESSION['orderType'] = $val;
 							}
