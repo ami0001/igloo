@@ -76,8 +76,6 @@ else {
   echo "Error creating table: " . mysqli_error($con) . ".<br>";
 }
 
-$poop = "poop";
-$test = "test";
 // Insert operations
 $item1 = "INSERT INTO tbMenu VALUES ('Honeydew-Almond', 'This smoothie is dedicated to the almond lovers in the world. Enjoy a nice honeydew smoothie with sprinkles of almond scattered within! YUM!', 10)";
 $item2 = "INSERT INTO tbMenu VALUES ('Banana PB&J', 'They doubted us. They said it couldn't be done. We proved them wrong. Enjoy this limited offering of a PB&J smoothie', 7)";
