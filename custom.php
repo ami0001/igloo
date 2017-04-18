@@ -23,13 +23,13 @@
 			</p>
 			<textarea cols="50" rows="8" readonly style = "resize:none;border:5px solid #0033CC;">Here are the Igloo we offer four different cup sizes. The size of the cup is going to determine the base price of the smoothie.
 			
-SnowFlake: $2
+Snowflake: $2.00
 
-Icicle: $4
+Icicle: $4.00
 
-Iceberg: $6
+Iceberg: $6.00
 
-Glacier: $8
+Glacier: $8.00
 				 
 			</textarea>
 			
@@ -319,7 +319,8 @@ Delivery: The order will be delivered to your front door steps
 	<p>
 		<!-- input type="submit" name="place" value="Place Order" -->
 		<!-- input type="submit" name="place" value="Place Order" -->
-		<input type="image" src="images/buttons/PlaceOrder.png" alt="Submit Form" />
+		<input type="image" name="place" src="images/buttons/PlaceOrder.png" alt="Place Order" />
+		<input type="hidden" name="place" value="Place Order"
 	</p>
 	</form>
 	<div id="tableSpace1"></div>
@@ -341,6 +342,16 @@ Delivery: The order will be delivered to your front door steps
 				$pay = $_POST['pay'];
 				$flavorsStr = "";
 				$toppingsStr = "";
+				$price = 0.0;
+				
+				if ($size == "Snowflake")
+					$price = $price + 2;
+				elseif ($size == "Icicle")
+					$price = $price + 4;
+				elseif ($size == "Iceberg")
+					$price = $price + 6;
+				elseif ($size == "Glacier")
+					$price = $price + 8;
 				
 				foreach ($flavors as $flavor) {
 					$flavorsStr = $flavorsStr.$flavor.', ';
@@ -348,12 +359,15 @@ Delivery: The order will be delivered to your front door steps
 				
 				foreach ($toppings as $topping) {
 					$toppingsStr = $toppingsStr.$topping.', ';
+					$price = $price + 0.5;
 				}
+				
+				$price = $price + ($price * 0.09);
 				
 				$flavorsStr = substr($flavorsStr, 0, -2);
 				$toppingsStr = substr($toppingsStr, 0, -2);
 				
-				$item = "INSERT INTO tbOrder (flavors, toppings, itemSize, orderStyle, orderType, payStyle) VALUES ('$flavorsStr', '$toppingsStr', '$size', '$style','Custom','$pay')";
+				$item = "INSERT INTO tbOrder (flavors, toppings, itemSize, orderStyle, orderType, payStyle, orderPrice) VALUES ('$flavorsStr', '$toppingsStr', '$size', '$style','Custom','$pay','$price')";
 
 				if (mysqli_query($con,$item)) {
 					$query = mysqli_query($con, "SELECT * FROM tbOrder WHERE orderNum = LAST_INSERT_ID()");
@@ -361,6 +375,9 @@ Delivery: The order will be delivered to your front door steps
 						foreach ($row as $col => $val) {
 							if ($col == 'orderNum') {
 								$_SESSION['orderNum'] = $val;
+							}
+							elseif ($col == 'orderTime') {
+								$_SESSION['orderTime'] = $val;
 							}
 							elseif ($col == 'orderType') {
 								$_SESSION['orderType'] = $val;

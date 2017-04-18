@@ -479,15 +479,7 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone', cardNum='$cardNum', securityCode='$cvc', expireDate='$expire', cardName='$cardName' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$creditEmail = "Order Time: $orderTime\n
-										Order Number: $orderNum\n
-										Order Style: $orderStyle\n
-										Order Type: $orderType\n
-										Name: $fname $lname\n
-										Address: $address\n
-										Phone: $phone\n
-										Price: \$" . number_format($price, 2, '.', '') . "\n
-										Payment: $payStyle";
+							$creditEmail = "Order Time: $orderTime\nOrder Number: $orderNum\nOrder Style: $orderStyle\nOrder Type: $orderType\nName: $fname $lname\nAddress: $address\nPhone: $phone\nPrice: \$" . number_format($price, 2, '.', '') . "\nPayment: $payStyle";
 							mail($email, "The Igloo - Order Confirmation for '$email'", $creditEmail);
 							header("location: index.php");
 						}
@@ -508,15 +500,7 @@
 						$update = "UPDATE tbOrder set fname='$fname', lname='$lname', address='$address', email='$email', phone='$phone' WHERE orderNum='$orderNum'";
 						
 						if (mysqli_query($con, $update)){
-							$cashEmail = "Order Time: $orderTime\n
-										Order Number: $orderNum\n
-										Order Style: $orderStyle\n
-										Order Type: $orderType\n
-										Name: $fname $lname\n
-										Address: $address\n
-										Phone: $phone\n
-										Price: \$" . number_format($price, 2, '.', '') . "\n
-										Payment: $payStyle";
+							$cashEmail = "Order Time: $orderTime\nOrder Number: $orderNum\nOrder Style: $orderStyle\nOrder Type: $orderType\nName: $fname $lname\nAddress: $address\nPhone: $phone\nPrice: \$" . number_format($price, 2, '.', '') . "\nPayment: $payStyle";
 							mail($email, "The Igloo - Order Confirmation for '$email'", $cashEmail);
 							header("location: index.php");
 						}

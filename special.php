@@ -104,7 +104,8 @@
 			<center style="background-color:#FFEFD5">
 				<div id="customSpace">
 				<!-- input type="submit" name="place" value="Place Order" -->
-				<input type="image" src="images/buttons/PlaceOrder.png" alt="Submit Form" />
+				<input type="image" src="images/buttons/PlaceOrder.png" alt="Place Order" />
+				<input type="hidden" name="place" value="Place Order"
 			</center>
 		</p>
 	</form></p>
@@ -127,7 +128,7 @@
 				while ($row = mysqli_fetch_assoc($query)) {
 					foreach ($row as $col => $val) {
 						if ($col == 'itemPrice') {
-							$price = ($val * 0.09) + $val;
+							$price = $price + $val;
 						}
 					}
 				}
@@ -138,7 +139,9 @@
 					$price = $price + 2;
 				elseif ($size == "Glacier")
 					$price = $price + 4;
-								
+					
+				$price = $price + ($price * 0.09);
+			
 				$item = "INSERT INTO tbOrder (itemName, itemSize, orderStyle, orderType, payStyle, orderPrice) VALUES ('$item', '$size', '$style','Specialty','$pay','$price')";
 
 				if (mysqli_query($con,$item)) {
