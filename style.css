@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 .left
 {
 	width:500px;
-	/*background-color: #EBEBEB;*/
+	/*background-color: #FFFAF0;*/
 	height:1400px;
 	float:left
 	
@@ -90,7 +90,8 @@ textarea
 
 #container {
 	width: 100%;
-	background-color: #EBEBEB;
+	/*background-color: #EBEBEB;*/
+	background-color: #FFEFD5;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -175,7 +176,8 @@ textarea
 }
 #mainContent 
 {
-	background-color: #EBEBEB;
+	/*background-color: #EBEBEB;*/
+	background-color: FFEFD5;
 	/*margin-left: 12em;*/
 	/*padding: 10px 20px 0 1em;*/
 }
@@ -219,7 +221,7 @@ textarea
 
 #tableSpace2
 {
-	height: 20px;
+	height: 2px;
 }
 
 
@@ -228,6 +230,20 @@ textarea
 	height: 20px;
 }
 
+#flavorSpace
+{
+	height: 55px;
+}
+
+#orderSpace
+{
+	height: 45px;
+}
+
+#customSpace
+{
+	height: 60px;
+}
 
 #itemDescriptionSpace
 {
@@ -247,7 +263,8 @@ textarea
 #heightSpace1
 {
     height: 25px;
-	background-color: #EBEBEB;
+	/*background-color: #EBEBEB;*/
+	background-color: FFEFD5
 }
 
 #heightSpace2
@@ -266,7 +283,8 @@ textarea
 #footer-spacer 
 {
     height: 70px;
-	background-color: #EBEBEB;
+	/*background-color: #EBEBEB;*/
+	background-color: #FFEFD5;
 }
 
 #footer p {

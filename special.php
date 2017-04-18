@@ -7,13 +7,15 @@
  	<title>Igloo</title>
  	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
-<body>
+<body style = "background-color:#FFEFD5">
 	<?php
 		require "check.php";
 	?>
 	<p><form name="special" method="post" action="special.php">
-		<div id="specialties">
+		<div id="specialties" style="background-color:#FFEFD5">
 			<p><table align="center">
+				<!-- Space for the page layout -->
+				<div id="customSpace">
 				<tr>
 					<th>Item</th>
 					<th>Name</th>
@@ -49,7 +51,9 @@
 					}
 				?>
 			</table></p>
+			<!-- div id="customSpace" -->
 			<p><table align="center">
+				<div id="customSpace">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Size</th>
 				</tr>
@@ -63,6 +67,7 @@
 				</tr>
 			</table></p>
 			<p><table align="center">
+				<div id="customSpace">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Style</th>
 				</tr>
@@ -72,6 +77,7 @@
 				</tr>
 			</table></p>
 			<p><table align="center">
+				<div id="customSpace">
 				<tr>
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Payment</th>
 				</tr>
@@ -82,7 +88,10 @@
 			</table></p>
 		</div>
 		<p>
-			<center><input type="submit" name="place" value="Place Order"></center>
+			<center style="background-color:#FFEFD5">
+				<div id="customSpace">
+				<input type="submit" name="place" value="Place Order">
+			</center>
 		</p>
 	</form></p>
 	<?php

@@ -8,7 +8,8 @@
  	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
 <!-- body style="background-image:url('images/CustomOrderBackground6.jpg'); background-size: 100% 100%; background-repeat: no-repeat;" -->
-<body style="background-color:#6699CC">
+<!-- body style="background-color:#FFF8DC" -->
+<body style="background-color:#FFEFD5">
 	<?php
 		require "check.php";
 	?>
@@ -20,7 +21,7 @@
 			<p align = "center">
 				Size Descriptions
 			</p>
-			<textarea cols="50" rows="8" readonly style = "resize:none">Here are the Igloo we offer four different cup sizes. 
+			<textarea cols="50" rows="8" readonly style = "resize:none;border:5px solid #0033CC;">Here are the Igloo we offer four different cup sizes. 
 			
 SnowFlake: This size is for those who would like a small sample.
 
@@ -37,7 +38,7 @@ Glacier: This size is only for champions.
 			<p align = "center">
 				Flavor Descriptions
 			</p>
-			<textarea cols="50" rows="19" readonly style = "resize:none">Here at the Igloo we offer a variety of different flavors.
+			<textarea cols="50" rows="19" readonly style = "resize:none;border:5px solid #0033CC;">Here at the Igloo we offer a variety of different flavors.
 			
 There are currently 12 flavors to choose from
 
@@ -70,7 +71,7 @@ Raspberry:
 			<p align = "center">
 				Topping Descriptions
 			</p>
-			<textarea cols="50" rows="18" readonly style = "resize:none">
+			<textarea cols="50" rows="18" readonly style = "resize:none;border:5px solid #0033CC;">
 				This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
 				dkfjdkfjdksajfdlkajkjfkdasjdkjfdkajfdkajkdjfdkafjdkfjdkaldj
 			</textarea>
@@ -80,28 +81,35 @@ Raspberry:
 			<p align = "center">
 				Order Option
 			</p>
-			<textarea cols="50" rows="4" readonly style = "resize:none">
+			<textarea cols="50" rows="4" readonly style = "resize:none;border:5px solid #0033CC;">
 				This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
 				dkfjdkfjdksajfdlkajkjfkdasjdkjfdkajfdkajkdjfdkafjdkfjdkaldj
 			</textarea>
 
 		</div>
 		<div class = "right">
+			<!-- Space for formatting -->
+			<p align = "center">
+				Pictures
+			</p>
 			<!-- Picture for cup sizes -->
-			<div id="pictureDescriptionSpace"></div>
-			<img src="images/CustomPictures/cupSizes.jpg" alt="Login" style="width:360px;height:220px;">
+			
+			<!-- img src="images/CustomPictures/cupSizes.jpg" alt="Login" style="width:360px;height:220px;" border="3" -->
+			<img src="images/CustomPictures/cupSizes.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
 			
 			<!-- Picture for flavors -->
 			<div id="pictureDescriptionSpace"></div>
-			<img src="images/CustomPictures/smoothiePic2.jpg" alt="Login" style="width:360px;height:220px;">
+			<img src="images/CustomPictures/smoothiePic2.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
 			<div id="pictureDescriptionSpace"></div>
-			<img src="images/CustomPictures/smoothiePic4.jpg" alt="Login" style="width:360px;height:220px;">
+			<img src="images/CustomPictures/smoothiePic4.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
 			
 			<!-- Picture for toppings -->
-			<div id="pictureDescriptionSpace2"></div>
-			<img src="images/CustomPictures/toppingPic1.jpg" alt="Login" style="width:360px;height:220px;">
 			<div id="pictureDescriptionSpace"></div>
-			<img src="images/CustomPictures/toppingPic3.jpg" alt="Login" style="width:360px;height:220px;">
+			<img src="images/CustomPictures/toppingPic1.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
+			<div id="pictureDescriptionSpace"></div>
+			<img src="images/CustomPictures/toppingPic3.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
+			<div id="pictureDescriptionSpace"></div>
+			<img src="images/CustomPictures/smoothiePic1.jpg" alt="Login" style="width:380px;height:240px;border:5px solid #0033CC;">
 			
 			
 		</div>
@@ -149,12 +157,13 @@ Raspberry:
 		</tr>
 	</table>
 	
-	<div id="tableSpace1"></div>
+	<!-- div id="tableSpace1"></div -->
+	<div id="flavorSpace"></div>
 	
 	<p align = "center">
 		Select the Flavor
 	</p>
-	<table align="center" style = "width:30%">
+	<table align="center" style = "width:30%;">
 		<tr>
 			<th>Flavors</th>
 			<th>Select</th>
@@ -260,7 +269,8 @@ Raspberry:
 		</tr>
 	</table>
 	
-	<div id="tableSpace1"></div>
+	<!-- div id="tableSpace1"></div -->
+	<div id="orderSpace"></div>
 	
 	<p>Order Style</p>
 	<table align="center" style = "width:30%">
@@ -276,7 +286,8 @@ Raspberry:
 		</tr>
 	</table>
 	
-	<div id="tableSpace3"></div>	
+	<div id="tableSpace1"></div>
+	
 	<p>Payment Style</p>
 	<table align="center" style = "width:30%">
 		<tr>
@@ -289,14 +300,14 @@ Raspberry:
 		<tr>
 			<td>Credit</td>
 			<td><input type="radio" name="pay" value="Credit"></td>
-		</tr>	
-		
+		</tr>
+		</tr>
 	</table>
+	
 	<p><input type="submit" name="place" value="Place Order"></p>
 	</form>
 	<div id="tableSpace1"></div>
 	
-	<li> <a href=order.php><img src="images/button/specialityOrderButton.png" alt="Special Page" title="Special Page"></a></li>
 	
 	<?php
 		require "config.php";
