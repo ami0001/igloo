@@ -18,7 +18,7 @@
 	<div id = "wrap2">
 		<div class = "left">
 			<!-- Size descriptions  -->
-			<p align = "center">
+			<p id = "customFont" align = "center">
 				Size Descriptions
 			</p>
 			<textarea cols="50" rows="8" readonly style = "resize:none;border:5px solid #0033CC;">Here are the Igloo we offer four different cup sizes. The size of the cup is going to determine the base price of the smoothie.
@@ -35,7 +35,7 @@ Glacier: $8
 			
 			<!-- Flavor descriptions  -->
 			<div id="itemDescriptionSpace"></div>
-			<p align = "center">
+			<p id = "customFont" align = "center">
 				Flavor Descriptions
 			</p>
 			<textarea cols="50" rows="19" readonly style = "resize:none;border:5px solid #0033CC;">Here at the Igloo we offer a variety of different flavors.
@@ -70,7 +70,7 @@ Raspberry:
 			
 			<!-- Topping description -->
 			<div id="itemDescriptionSpace"></div>
-			<p align = "center">
+			<p id = "customFont" align = "center">
 				Topping Descriptions
 			</p>
 			<textarea cols="50" rows="18" readonly style = "resize:none;border:5px solid #0033CC;">Here at the Igloo we offer a variety of toppings to select from.
@@ -82,7 +82,7 @@ You are able to add as many toppings as you would like to your smoothie!
 			
 			<!-- Order Options -->
 			<div id="itemDescriptionSpace"></div>
-			<p align = "center">
+			<p id = "customFont" align = "center">
 				Order Option
 			</p>
 			<textarea cols="50" rows="4" readonly style = "resize:none;border:5px solid #0033CC;"> Here at the Igloo we support two different forms of ordering.
@@ -95,7 +95,7 @@ Delivery: The order will be delivered to your front door steps
 		</div>
 		<div class = "right">
 			<!-- Space for formatting -->
-			<p align = "center">
+			<p id = "customFont" align = "center">
 				Pictures
 			</p>
 			<!-- Picture for cup sizes -->
@@ -139,7 +139,7 @@ Delivery: The order will be delivered to your front door steps
 	<!-- /div -->
 	<form name="custom" method="post" action="custom.php">
 	<div id="tableSpace2"></div>
-	<p align = "center">
+	<p id = "customFont" align = "center">
 		Select the Size
 	</p>
 	<table align="center" style = "width:30%">
@@ -166,7 +166,7 @@ Delivery: The order will be delivered to your front door steps
 	<!-- div id="tableSpace1"></div -->
 	<div id="flavorSpace"></div>
 	
-	<p align = "center">
+	<p id = "customFont" align = "center">
 		Select the Flavor
 	</p>
 	<table align="center" style = "width:30%;">
@@ -224,7 +224,9 @@ Delivery: The order will be delivered to your front door steps
 	
 	<div id="tableSpace1"></div>
 	
-	<p>Select the Topping</p>
+	<p id = "customFont" >
+		Select the Topping
+	</p>
 	<table align="center" style = "width:30%">
 		<tr>
 			<th>Toppings</th>
@@ -278,7 +280,9 @@ Delivery: The order will be delivered to your front door steps
 	<!-- div id="tableSpace1"></div -->
 	<div id="orderSpace"></div>
 	
-	<p>Order Style</p>
+	<p id = "customFont" >
+		Order Style
+	</p>
 	<table align="center" style = "width:30%">
 		<tr>
 			<th colspan="2">Select Style</th>
@@ -294,7 +298,9 @@ Delivery: The order will be delivered to your front door steps
 	
 	<div id="tableSpace1"></div>
 	
-	<p>Payment Style</p>
+	<p id = "customFont" >
+		Payment Style
+	</p>
 	<table align="center" style = "width:30%">
 		<tr>
 			<th>Select Payment</th>
@@ -310,7 +316,11 @@ Delivery: The order will be delivered to your front door steps
 		</tr>
 	</table>
 	
-	<p><input type="submit" name="place" value="Place Order"></p>
+	<p>
+		<!-- input type="submit" name="place" value="Place Order" -->
+		<!-- input type="submit" name="place" value="Place Order" -->
+		<input type="image" src="images/buttons/PlaceOrder.png" alt="Submit Form" />
+	</p>
 	</form>
 	<div id="tableSpace1"></div>
 	

@@ -103,7 +103,8 @@
 		<p>
 			<center style="background-color:#FFEFD5">
 				<div id="customSpace">
-				<input type="submit" name="place" value="Place Order">
+				<!-- input type="submit" name="place" value="Place Order" -->
+				<input type="image" src="images/buttons/PlaceOrder.png" alt="Submit Form" />
 			</center>
 		</p>
 	</form></p>

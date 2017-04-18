@@ -312,6 +312,13 @@ textarea
 	padding: 10px 20px 0 1em;
 }
 
+#mainContent3 
+{
+	background-color: #EBEBEB;
+	margin-left: 25em;
+	padding: 10px 20px 0 1em;
+}
+
 #footer-spacer 
 {
     height: 70px;
@@ -384,6 +391,17 @@ button
     background-size: 100px 130px;
     height: 134px;  
     width: 104px;
+}
+
+
+#customFont
+{
+	/*font-family: Georgia, "Times New Roman", Times, serif;*/
+	font-family:Arial
+	/*color: white;*/
+	font-weight: bold;
+	font-size: 20px
+	/*color:#0033CC*/
 }
 
 
