@@ -58,12 +58,12 @@
 					<th colspan="2" style="border-right: 1px solid #555555;">Select Size</th>
 				</tr>
 				<tr>
-					<td><input type="radio" name="size" value="Snowflake"> Snowflake</td>
-					<td><input type="radio" name="size" value="Icicle"> Icicle</td>
+					<td><input type="radio" name="size" value="Snowflake"> Snowflake &nbsp;+$0.00</td>
+					<td><input type="radio" name="size" value="Icicle"> Icicle &nbsp;&nbsp;&nbsp;+$1.00</td>
 				</tr>
 				<tr>
-					<td><input type="radio" name="size" value="Iceberg"> Iceberg</td>
-					<td><input type="radio" name="size" value="Glacier"> Glacier</td>
+					<td><input type="radio" name="size" value="Iceberg"> Iceberg &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+$2.00</td>
+					<td><input type="radio" name="size" value="Glacier"> Glacier &nbsp;+$4.00</td>
 				</tr>
 			</table></p>
 			<p><table align="center">
@@ -117,6 +117,13 @@
 						}
 					}
 				}
+				
+				if ($size == "Icicle")
+					$price = $price + 1;
+				elseif ($size == "Iceberg")
+					$price = $price + 2;
+				elseif ($size == "Glacier")
+					$price = $price + 4;
 								
 				$item = "INSERT INTO tbOrder (itemName, itemSize, orderStyle, orderType, payStyle, orderPrice) VALUES ('$item', '$size', '$style','Specialty','$pay','$price')";
 
