@@ -369,6 +369,10 @@ Delivery: The order will be delivered to your front door steps
 			}
 		}
 	?>
+	
+	<div id="footer">
+			<p>Copyright &copy; 2017 The Igloo. All rights reserved.</p>
+		</div> <!-- End of footer -->
 
 </body>
 

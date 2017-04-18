@@ -272,6 +272,11 @@ textarea
 	height: 40px;
 }
 
+#customSpace2
+{
+	height: 100px;
+}
+
 #itemDescriptionSpace
 {
 	height: 20px;
@@ -313,6 +318,22 @@ textarea
 	/*background-color: #EBEBEB;*/
 	background-color: #FFEFD5;
 }
+
+#footer-spacer1
+{
+    height: 260px;
+	/*background-color: #EBEBEB;*/
+	/*background-color: #FFEFD5;*/
+}
+
+#footer-spacer2
+{
+    height: 440px;
+	/*background-color: #EBEBEB;*/
+	/*background-color: #FFEFD5;*/
+}
+
+
 
 #footer p {
 	margin: 0;

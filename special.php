@@ -167,5 +167,9 @@
 			}
 		}
 	?>
+	
+	<div id="footer">
+			<p>Copyright &copy; 2017 The Igloo. All rights reserved.</p>
+	</div> <!-- End of footer -->
 </body>
 </html>
