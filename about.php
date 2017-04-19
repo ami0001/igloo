@@ -17,11 +17,41 @@
 	</div> <!-- End of header -->
 	
 	<!-- Making space for the about page -->
-	<div id="tableSpace1"></div>
-	<div id="tableSpace1"></div>
-	<div id="tableSpace1"></div>
+	<!-- div id="tableSpace1"></div -->
+	<!-- div id="tableSpace1"></div -->
+	<!-- div id="tableSpace1"></div -->
 	
-	<div id="mainContent3" style="width:500px;height:400px;border:5px solid #0033CC;">
+	<div id = "wrap">
+				<div class = "left3">
+					<p id = "customFont" align = "center">
+						Sample Pictures of our Services
+					</p>
+					<img src="images/smoothiePic2.jpg" alt="Login" style="width:420px;height:350px;border:5px solid #0033CC;">
+					<div id="tableSpace1"></div>
+					<img src="images/smootiePic3.jpg" alt="Login" style="width:420px;height:340px;border:5px solid #0033CC;">
+
+				</div>
+				<div class = "right2">
+					<p id = "customFont" align = "center">
+						Dr. Aygun: Manager
+					</p>
+					<img src="images/Teacher.jpg" alt="Login" style="width:220px;height:200px;border:5px solid #0033CC;">
+					<p id = "customFont" align = "center">
+						Alex Indihar: Web Developer
+					</p>
+					<img src="images/alex.png" alt="Login" style="width:220px;height:200px;border:5px solid #0033CC;">
+					<p id = "customFont" align = "center">
+						Jonathan Shields: Web Developer
+					</p>
+					<img src="images/JonJon.jpg" alt="Login" style="width:220px;height:200px;border:5px solid #0033CC;">
+				</div>
+	</div>
+	<div id="tableSpace1"></div>
+	<div id="tableSpace1"></div>
+	<div id="tableSpace1"></div>
+	<div id="tableSpace1"></div>
+	<div id="tableSpace1"></div>
+	<div id="mainContent3" style="width:500px;height:440px;border:5px solid #0033CC;">
 		
 			<!-- Attempting to include a picture for the home page -->
 			<center>
@@ -42,9 +72,17 @@
 					placing a order because their contact information will be stored within our database. Registere users will not have
 					to fill in the "customer information" section because their personal data will be pulled in from the database
 				</p>
+				<p>
+					At the end of the day our main goal is to deliver happiness with each smoothie that is ordered from the website!
+				</p>
 				
 			
 	</div> <!-- End of mainContent -->
+	
+	<div id="footer-spacer3"></div> 
+	<div id="footer">
+			<p>Copyright &copy; 2017 The Igloo. All rights reserved.</p>
+	</div> <!-- End of footer -->
 	
 </body>
 </html> 

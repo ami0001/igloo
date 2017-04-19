@@ -7,7 +7,7 @@
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
-<body>
+<body style="background-color:#FFEFD5">
 	<?php
 		require "check.php";
 		
@@ -15,7 +15,9 @@
 		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 16;
 	?>
 	<p><form name="card" method="post" action="card.php">
-		<table width="600" align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+		<table width="600" align="center" cellpadding="0" cellspacing="1" style = "border:5px solid #0033CC;">
+			<!-- Space for the page layout -->
+			<div id="customSpace2">
 			<tr>
 				<td>
 					<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">

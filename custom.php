@@ -44,28 +44,9 @@ There are currently 12 flavors to choose from. The flavors selected are not goin
 
 You can select one flavor or multiple flavors. The possibilites are endless.  
 
-Strawberry: Our strawberries are picked from the freshest gardens
+Every flavor is made from 100% natural ingredients. All of our fruit are picked and delivered to us by the farmers in our local community. A portion of ourssales goes back to the community in order to support small businesses.
 
-Blueberry: Our blueberries are flown in from Paris
-
-Pineapple: Our Pineapples are hand delivered by M
-
-Mango:
-
-Cocunut:
-
-Banana:
-
-Kiwi:
-
-Peach:
-
-Orange:
-
-Grape:
-
-Raspberry:
-				
+Each flavor is a mixture of the natural fruit element as well as our secret formula in order to create the ultimate smoothie experience! 	
 			</textarea>
 			
 			<!-- Topping description -->
@@ -78,6 +59,12 @@ Raspberry:
 Each topping is 50 cents. 
 
 You are able to add as many toppings as you would like to your smoothie!
+
+Please note that some toppings may have traces of nuts and nut oils or may have been made alongside other products containing nuts. 
+ 
+The Igloo can not be held responsible for any issues resulting from food allergies
+
+We recommend adult supervision for anyone that is under the age of 13 using our online services.
 			</textarea>
 			
 			<!-- Order Options -->
@@ -399,7 +386,7 @@ Delivery: The order will be delivered to your front door steps
 	
 	<div id="footer">
 			<p>Copyright &copy; 2017 The Igloo. All rights reserved.</p>
-		</div> <!-- End of footer -->
+	</div> <!-- End of footer -->
 
 </body>
 

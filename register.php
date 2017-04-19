@@ -7,7 +7,7 @@
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
-<body style="background-image:url('images/registerBackground.jpg'); background-size: 100% auto; background-repeat: no-repeat;">
+<body style="background-image:url('images/registerBackground.jpg'); background-size: 100% 100%; background-repeat: no-repeat;">
 	<?php
 			require "check.php";
 	?>

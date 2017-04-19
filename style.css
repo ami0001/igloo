@@ -59,6 +59,23 @@ h1, h2, h3, h4, h5, h6 {
 	float:right
 }
 
+.left3
+{
+	width:350px;
+	/*background-color: #F1F1F1;*/
+	height:400px;
+	float:left
+	
+}
+.right2
+{
+	width:500px;
+	/*background-color: #F1F1F1;*/
+	height:400px;
+	float:right
+}
+
+
 .middle
 {
 	width:240px;
@@ -315,7 +332,7 @@ textarea
 #mainContent3 
 {
 	background-color: #EBEBEB;
-	margin-left: 25em;
+	margin-left: 30em;
 	padding: 10px 20px 0 1em;
 }
 
@@ -336,6 +353,20 @@ textarea
 #footer-spacer2
 {
     height: 440px;
+	/*background-color: #EBEBEB;*/
+	/*background-color: #FFEFD5;*/
+}
+
+#footer-spacer3
+{
+    height: 250px;
+	/*background-color: #EBEBEB;*/
+	/*background-color: #FFEFD5;*/
+}
+
+#footer-spacer4
+{
+    height: 535px;
 	/*background-color: #EBEBEB;*/
 	/*background-color: #FFEFD5;*/
 }

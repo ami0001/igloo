@@ -7,7 +7,8 @@
 	<title>The Igloo</title>
 	<link href="style.css" rel=stylesheet type="text/css" />
 </head>
-<body>
+<!-- body style="background-color:#FFEFD5" -->
+<body style="background-image:url('images/OrderBackground2.jpg'); background-size: 100% 100%; background-repeat: no-repeat;">
 	<?php
 		require "check.php";
 		
@@ -15,7 +16,9 @@
 		(isset($_POST['year'])) ? $year = $_POST['year'] : $year = 16;
 	?>
 	<p><form name="order" method="post" action="order.php">
-	<table align="center" cellpadding="0" cellspacing="1" border="1px solid black">
+	<table align="center" cellpadding="0" cellspacing="1" bgcolor="#FFFFFF" border="1px solid black">
+	<!-- Space for the page layout -->
+	<div id="customSpace2">
 	<tr>
 		<td>
 			<table border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF" style="padding: 10;">
@@ -522,5 +525,11 @@
 			}  
 		}
 	?>
+	
+	<div id="footer-spacer4"></div>
+	<div id="footer">
+			<p>Copyright &copy; 2017 The Igloo. All rights reserved.</p>
+	</div>
 </body>
+
 </html> 
